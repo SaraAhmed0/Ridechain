@@ -6,26 +6,25 @@
 //
 
 import SwiftUI
-//import Firebase
+import Firebase
 
 
 @main
 struct RidechainApp: App {
+    @ObservedObject var viewModel: authViewModel
     
-    // @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+    init() {
+        FirebaseApp.configure()
+        viewModel = authViewModel()
+    }
     var body: some Scene {
         WindowGroup {
-            let viewModel = AppViewModel()//for sign in/up
-            ContentView()
-                .environmentObject(viewModel)        }
+            SignViews()
+                .environmentObject(viewModel)
+            
+        }
 
     }
     
-    /*class AppDelegate: NSObject, UIApplicationDelegate{
-     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-         
-         FirebaseApp.configure()
-         return true
-     }*/
+
 }
