@@ -6,19 +6,57 @@
 //
 
 import SwiftUI
+//import FirebaseAuth
 
 class AppViewModel: ObservableObject{ //signin and up without auth
     @Published var signedIn = false
+    //let auth = Auth.auth()
+    
+    /*var isSignedIn: Bool{
+        return auth.currentUser != nil
+    }*/
+    
+    
     func signIn(email:String, password:String){
-        signedIn = true
+        signedIn = true //after adding auth remove it
+        
+       /* auth.signIn(withEmail: email,
+                    password: password){ [weak self] result,
+            error in
+            guard result != nil, error == nil else{
+                return
+            }
+            
+            //success
+            DispatchQueue.main.async {
+                self?.signedIn = true
+
+            }
+        }*/
     }
     
     func signUp (email:String, password:String){
-        signedIn = true
+        signedIn = true //after adding auth remove it
+        
+       /* auth.createUser(withEmail: email, password: password) {[weak self] result, error in
+            guard result != nil, error == nil else{
+                return
+            }
+            //success
+            DispatchQueue.main.async {
+                self?.signedIn = true
+
+            }
+
+        }*/
     }
     
     func signOut(){
-        signedIn = false
+        signedIn = false //after adding auth remove it
+        
+       /* try?  auth.signOut()
+          
+          self.signedIn = false */
     }
 
 }
@@ -55,7 +93,11 @@ struct ContentView: View {
             
             
                 
-        }    }
+        } /*.onAppear{
+            viewModel.signedIn = viewModel.isSignedIn
+           }*/
+        
+    }
 }
 
 struct signInView: View {
