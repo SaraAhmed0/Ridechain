@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD5F6B295224BA00EC4CDF /* colors.swift */; };
 		DC539E0329511B78004A9760 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0229511B78004A9760 /* FirebaseAuth */; };
 		DC539E0529511B78004A9760 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0429511B78004A9760 /* FirebaseDatabase */; };
 		DC539E0729511B78004A9760 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0629511B78004A9760 /* FirebaseDatabaseSwift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47AD5F6B295224BA00EC4CDF /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		DC539E0E29511C34004A9760 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC539E1129511E84004A9760 /* authViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authViewModel.swift; sourceTree = "<group>"; };
 		DC539E152951221D004A9760 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				DC547B1A2948AD9D00AD95C0 /* Assets.xcassets */,
 				DC539E0E29511C34004A9760 /* GoogleService-Info.plist */,
 				DC547B1C2948AD9D00AD95C0 /* Preview Content */,
+				47AD5F6B295224BA00EC4CDF /* colors.swift */,
 			);
 			path = Ridechain;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC539E1229511E84004A9760 /* authViewModel.swift in Sources */,
+				47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */,
 				DC539E162951221D004A9760 /* Passenger.swift in Sources */,
 				DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */,
 				DC547B172948AD9C00AD95C0 /* RidechainApp.swift in Sources */,
