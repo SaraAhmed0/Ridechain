@@ -72,12 +72,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		DC539E1B2951CC77004A9760 /* UI's */ = {
+		DC539E1B2951CC77004A9760 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				DC539E1C2951CCBF004A9760 /* SignViews.swift */,
 			);
-			path = "UI's";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DC547B0A2948AD9C00AD95C0 = {
@@ -99,7 +99,7 @@
 		DC547B152948AD9C00AD95C0 /* Ridechain */ = {
 			isa = PBXGroup;
 			children = (
-				DC539E1B2951CC77004A9760 /* UI's */,
+				DC539E1B2951CC77004A9760 /* Views */,
 				DC539E0D29511BAF004A9760 /* ViewModels */,
 				DC539E0C29511B9F004A9760 /* Models */,
 				DC547B162948AD9C00AD95C0 /* RidechainApp.swift */,
