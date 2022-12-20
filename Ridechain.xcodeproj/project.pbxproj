@@ -14,10 +14,10 @@
 		DC539E0B29511B78004A9760 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0A29511B78004A9760 /* FirebaseFirestoreSwift */; };
 		DC539E0F29511C35004A9760 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC539E0E29511C34004A9760 /* GoogleService-Info.plist */; };
 		DC539E1229511E84004A9760 /* authViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC539E1129511E84004A9760 /* authViewModel.swift */; };
-		DC539E14295120AC004A9760 /* SignViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC539E13295120AC004A9760 /* SignViews.swift */; };
 		DC539E162951221D004A9760 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC539E152951221D004A9760 /* Passenger.swift */; };
 		DC539E1829512226004A9760 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC539E1729512226004A9760 /* Ride.swift */; };
 		DC539E1A29512230004A9760 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC539E1929512230004A9760 /* Ticket.swift */; };
+		DC539E1D2951CCBF004A9760 /* SignViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC539E1C2951CCBF004A9760 /* SignViews.swift */; };
 		DC547B172948AD9C00AD95C0 /* RidechainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC547B162948AD9C00AD95C0 /* RidechainApp.swift */; };
 		DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC547B182948AD9C00AD95C0 /* ContentView.swift */; };
 		DC547B1B2948AD9D00AD95C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC547B1A2948AD9D00AD95C0 /* Assets.xcassets */; };
@@ -27,10 +27,10 @@
 /* Begin PBXFileReference section */
 		DC539E0E29511C34004A9760 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC539E1129511E84004A9760 /* authViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authViewModel.swift; sourceTree = "<group>"; };
-		DC539E13295120AC004A9760 /* SignViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViews.swift; sourceTree = "<group>"; };
 		DC539E152951221D004A9760 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		DC539E1729512226004A9760 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		DC539E1929512230004A9760 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		DC539E1C2951CCBF004A9760 /* SignViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViews.swift; sourceTree = "<group>"; };
 		DC547B132948AD9C00AD95C0 /* Ridechain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ridechain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC547B162948AD9C00AD95C0 /* RidechainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidechainApp.swift; sourceTree = "<group>"; };
 		DC547B182948AD9C00AD95C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,12 +72,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		DC539E1029511CCD004A9760 /* Views */ = {
+		DC539E1B2951CC77004A9760 /* UI's */ = {
 			isa = PBXGroup;
 			children = (
-				DC539E13295120AC004A9760 /* SignViews.swift */,
+				DC539E1C2951CCBF004A9760 /* SignViews.swift */,
 			);
-			path = Views;
+			path = "UI's";
 			sourceTree = "<group>";
 		};
 		DC547B0A2948AD9C00AD95C0 = {
@@ -99,7 +99,7 @@
 		DC547B152948AD9C00AD95C0 /* Ridechain */ = {
 			isa = PBXGroup;
 			children = (
-				DC539E1029511CCD004A9760 /* Views */,
+				DC539E1B2951CC77004A9760 /* UI's */,
 				DC539E0D29511BAF004A9760 /* ViewModels */,
 				DC539E0C29511B9F004A9760 /* Models */,
 				DC547B162948AD9C00AD95C0 /* RidechainApp.swift */,
@@ -201,11 +201,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC539E1229511E84004A9760 /* authViewModel.swift in Sources */,
-				DC539E14295120AC004A9760 /* SignViews.swift in Sources */,
 				DC539E162951221D004A9760 /* Passenger.swift in Sources */,
 				DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */,
 				DC547B172948AD9C00AD95C0 /* RidechainApp.swift in Sources */,
 				DC539E1A29512230004A9760 /* Ticket.swift in Sources */,
+				DC539E1D2951CCBF004A9760 /* SignViews.swift in Sources */,
 				DC539E1829512226004A9760 /* Ride.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
