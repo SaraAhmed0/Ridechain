@@ -56,3 +56,9 @@ struct colorp{
     
     
 }
+
+/* you can use them like that:
+ .foregroundColor(colorp.lblue)
+ and for backgrounds:
+ .background(colorp.lblue)
+ */

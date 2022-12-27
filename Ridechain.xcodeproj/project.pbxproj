@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47913443295B4B1F001FA738 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47913442295B4B1F001FA738 /* Roboto-Medium.ttf */; };
+		47913449295B4BEB001FA738 /* tickettest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47913448295B4BEB001FA738 /* tickettest.swift */; };
+		4791344B295B4C5C001FA738 /* ticketv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791344A295B4C5C001FA738 /* ticketv.swift */; };
+		4791344D295B4CD7001FA738 /* linestruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791344C295B4CD7001FA738 /* linestruct.swift */; };
+		4791344F295B4E1C001FA738 /* ticketinitv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791344E295B4E1C001FA738 /* ticketinitv.swift */; };
+		47913451295B4E48001FA738 /* mytickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47913450295B4E48001FA738 /* mytickets.swift */; };
+		47913453295B4EC5001FA738 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47913452295B4EC5001FA738 /* Roboto-Regular.ttf */; };
 		47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD5F6B295224BA00EC4CDF /* colors.swift */; };
 		DC539E0329511B78004A9760 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0229511B78004A9760 /* FirebaseAuth */; };
 		DC539E0529511B78004A9760 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0429511B78004A9760 /* FirebaseDatabase */; };
@@ -26,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47913442295B4B1F001FA738 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		47913448295B4BEB001FA738 /* tickettest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tickettest.swift; sourceTree = "<group>"; };
+		4791344A295B4C5C001FA738 /* ticketv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketv.swift; sourceTree = "<group>"; };
+		4791344C295B4CD7001FA738 /* linestruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linestruct.swift; sourceTree = "<group>"; };
+		4791344E295B4E1C001FA738 /* ticketinitv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketinitv.swift; sourceTree = "<group>"; };
+		47913450295B4E48001FA738 /* mytickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mytickets.swift; sourceTree = "<group>"; };
+		47913452295B4EC5001FA738 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		47AD5F6B295224BA00EC4CDF /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		DC539E0E29511C34004A9760 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC539E1129511E84004A9760 /* authViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authViewModel.swift; sourceTree = "<group>"; };
@@ -56,6 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47913440295B4AD9001FA738 /* tickets */ = {
+			isa = PBXGroup;
+			children = (
+				47913448295B4BEB001FA738 /* tickettest.swift */,
+				4791344A295B4C5C001FA738 /* ticketv.swift */,
+				4791344C295B4CD7001FA738 /* linestruct.swift */,
+				4791344E295B4E1C001FA738 /* ticketinitv.swift */,
+				47913450295B4E48001FA738 /* mytickets.swift */,
+			);
+			path = tickets;
+			sourceTree = "<group>";
+		};
 		DC539E0C29511B9F004A9760 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +111,8 @@
 		DC547B0A2948AD9C00AD95C0 = {
 			isa = PBXGroup;
 			children = (
+				47913452295B4EC5001FA738 /* Roboto-Regular.ttf */,
+				47913442295B4B1F001FA738 /* Roboto-Medium.ttf */,
 				DC547B152948AD9C00AD95C0 /* Ridechain */,
 				DC547B142948AD9C00AD95C0 /* Products */,
 			);
@@ -101,6 +129,7 @@
 		DC547B152948AD9C00AD95C0 /* Ridechain */ = {
 			isa = PBXGroup;
 			children = (
+				47913440295B4AD9001FA738 /* tickets */,
 				DC539E1B2951CC77004A9760 /* Views */,
 				DC539E0D29511BAF004A9760 /* ViewModels */,
 				DC539E0C29511B9F004A9760 /* Models */,
@@ -190,7 +219,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47913443295B4B1F001FA738 /* Roboto-Medium.ttf in Resources */,
 				DC547B1E2948AD9D00AD95C0 /* Preview Assets.xcassets in Resources */,
+				47913453295B4EC5001FA738 /* Roboto-Regular.ttf in Resources */,
 				DC539E0F29511C35004A9760 /* GoogleService-Info.plist in Resources */,
 				DC547B1B2948AD9D00AD95C0 /* Assets.xcassets in Resources */,
 			);
@@ -204,11 +235,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC539E1229511E84004A9760 /* authViewModel.swift in Sources */,
+				47913451295B4E48001FA738 /* mytickets.swift in Sources */,
 				47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */,
+				4791344F295B4E1C001FA738 /* ticketinitv.swift in Sources */,
 				DC539E162951221D004A9760 /* Passenger.swift in Sources */,
+				47913449295B4BEB001FA738 /* tickettest.swift in Sources */,
 				DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */,
 				DC547B172948AD9C00AD95C0 /* RidechainApp.swift in Sources */,
 				DC539E1A29512230004A9760 /* Ticket.swift in Sources */,
+				4791344B295B4C5C001FA738 /* ticketv.swift in Sources */,
+				4791344D295B4CD7001FA738 /* linestruct.swift in Sources */,
 				DC539E1D2951CCBF004A9760 /* SignViews.swift in Sources */,
 				DC539E1829512226004A9760 /* Ride.swift in Sources */,
 			);
