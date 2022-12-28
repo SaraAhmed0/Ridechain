@@ -9,8 +9,59 @@ import SwiftUI
 
 struct ContentView: View {
     
+    //Refrence to the database
+    @EnvironmentObject var dbPassenger: PassengerVM
+    @EnvironmentObject var dbRide: RideVM
+    @EnvironmentObject var dbTicket: TicketVM
+    
+    
+    @State private var numOfTickets = 1
+    
     var body: some View {
-        Text("Sara")
+        List{
+            ForEach(dbRide.rides, content: makeRideCellView)
+            /* dbRide.rides , meaning the Foreach loop on every
+            document in the collection */
+            
+            //then it will send the document to the function make cell
+        }
+        
+        
+    }
+    
+    
+func makeRideCellView(_ ride:  Ride) -> some View {
+    // an object of ride
+        VStack{
+
+            Text(ride.rideDropoff ?? "") // access to the rideDropoff attribute in ride object
+            
+            Text("\(ride.rideCapacity ?? 0)")
+           
+            HStack{
+                Stepper("\(numOfTickets)", value: $numOfTickets, in: 1...10)
+                Text("\(calculatePrice(ride, numOfTickets))")
+                }
+            Button{
+                dbRide.decrementCapacity(ride, numOfTickets)
+                dbTicket.issueTicket(ride, numOfTickets, calculatePrice(ride, numOfTickets))
+            } label: {
+                ZStack{
+                    Rectangle()
+                    Text("Book")
+                }
+            }
+          
+        }
+    
+    
+    }
+    
+    func calculatePrice(_ ride:  Ride, _ numOfTickets : Int) -> Double{
+        var price = (ride.ridePrice ?? 0)*(Double(numOfTickets))
+        var newPrice = round(price * 100)/100.0
+        return newPrice
+        
     }
 }
  

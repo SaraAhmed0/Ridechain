@@ -16,7 +16,7 @@ struct SignViews: View {
             if viewModel.signedIn{
 
                 VStack{
-                    Text("todays page")
+                    ContentView()
                     
                     Button(action: {
                         viewModel.signOut()
