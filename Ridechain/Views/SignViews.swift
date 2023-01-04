@@ -16,19 +16,19 @@ struct SignViews: View {
             if viewModel.signedIn{
 
                 VStack{
-                    ContentView()
+                    TabBar()
                     
-                    Button(action: {
-                        viewModel.signOut()
-                    }, label: {
-                        Text("sign Out")
-                            .foregroundColor(Color.white)
-                            .frame(width: 350,height: 50)
-                            .background(Color(red:96/255 ,green:190/255 ,blue:143/255 ))
-                            .cornerRadius(8)
-                            .padding( )
-                        
-                    })
+//                    Button(action: {
+//                        viewModel.signOut()
+//                    }, label: {
+//                        Text("sign Out")
+//                            .foregroundColor(Color.white)
+//                            .frame(width: 350,height: 50)
+//                            .background(Color(red:96/255 ,green:190/255 ,blue:143/255 ))
+//                            .cornerRadius(8)
+//                            .padding( )
+//
+//                    })
                 }
             }
             else{

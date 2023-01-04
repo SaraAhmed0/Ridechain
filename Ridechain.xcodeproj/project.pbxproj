@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1439AA9E29645CB900ABBEC8 /* walletPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439AA9D29645CB900ABBEC8 /* walletPage.swift */; };
+		1439AAA029645CE600ABBEC8 /* walletActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439AA9F29645CE600ABBEC8 /* walletActivity.swift */; };
+		1439AAA229645D1100ABBEC8 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439AAA129645D1100ABBEC8 /* Wallet.swift */; };
 		47913443295B4B1F001FA738 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47913442295B4B1F001FA738 /* Roboto-Medium.ttf */; };
 		47913449295B4BEB001FA738 /* tickettest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47913448295B4BEB001FA738 /* tickettest.swift */; };
 		4791344B295B4C5C001FA738 /* ticketv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791344A295B4C5C001FA738 /* ticketv.swift */; };
@@ -33,9 +36,13 @@
 		DC84F242295C685700379060 /* PassengerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F241295C685700379060 /* PassengerVM.swift */; };
 		DC84F244295C687600379060 /* RideVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F243295C687500379060 /* RideVM.swift */; };
 		DC84F246295C689800379060 /* TicketVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F245295C689800379060 /* TicketVM.swift */; };
+		DC84F2482965553200379060 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F2472965553200379060 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1439AA9D29645CB900ABBEC8 /* walletPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletPage.swift; sourceTree = "<group>"; };
+		1439AA9F29645CE600ABBEC8 /* walletActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletActivity.swift; sourceTree = "<group>"; };
+		1439AAA129645D1100ABBEC8 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		47913442295B4B1F001FA738 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		47913448295B4BEB001FA738 /* tickettest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tickettest.swift; sourceTree = "<group>"; };
 		4791344A295B4C5C001FA738 /* ticketv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketv.swift; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 		DC84F241295C685700379060 /* PassengerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerVM.swift; sourceTree = "<group>"; };
 		DC84F243295C687500379060 /* RideVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideVM.swift; sourceTree = "<group>"; };
 		DC84F245295C689800379060 /* TicketVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVM.swift; sourceTree = "<group>"; };
+		DC84F2472965553200379060 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1439AA9C29645C9F00ABBEC8 /* wallet */ = {
+			isa = PBXGroup;
+			children = (
+				1439AA9D29645CB900ABBEC8 /* walletPage.swift */,
+				1439AA9F29645CE600ABBEC8 /* walletActivity.swift */,
+				1439AAA129645D1100ABBEC8 /* Wallet.swift */,
+			);
+			path = wallet;
+			sourceTree = "<group>";
+		};
 		47913440295B4AD9001FA738 /* tickets */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				DC539E1C2951CCBF004A9760 /* SignViews.swift */,
+				DC84F2472965553200379060 /* TabBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 		DC547B152948AD9C00AD95C0 /* Ridechain */ = {
 			isa = PBXGroup;
 			children = (
+				1439AA9C29645C9F00ABBEC8 /* wallet */,
 				47913440295B4AD9001FA738 /* tickets */,
 				DC539E1B2951CC77004A9760 /* Views */,
 				DC539E0D29511BAF004A9760 /* ViewModels */,
@@ -247,10 +267,13 @@
 				DC84F244295C687600379060 /* RideVM.swift in Sources */,
 				DC539E1229511E84004A9760 /* authViewModel.swift in Sources */,
 				47913451295B4E48001FA738 /* mytickets.swift in Sources */,
+				1439AA9E29645CB900ABBEC8 /* walletPage.swift in Sources */,
 				47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */,
+				1439AAA229645D1100ABBEC8 /* Wallet.swift in Sources */,
 				4791344F295B4E1C001FA738 /* ticketinitv.swift in Sources */,
 				DC539E162951221D004A9760 /* Passenger.swift in Sources */,
 				DC84F242295C685700379060 /* PassengerVM.swift in Sources */,
+				1439AAA029645CE600ABBEC8 /* walletActivity.swift in Sources */,
 				47913449295B4BEB001FA738 /* tickettest.swift in Sources */,
 				DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */,
 				DC547B172948AD9C00AD95C0 /* RidechainApp.swift in Sources */,
@@ -259,6 +282,7 @@
 				4791344D295B4CD7001FA738 /* linestruct.swift in Sources */,
 				DC539E1D2951CCBF004A9760 /* SignViews.swift in Sources */,
 				DC539E1829512226004A9760 /* Ride.swift in Sources */,
+				DC84F2482965553200379060 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
