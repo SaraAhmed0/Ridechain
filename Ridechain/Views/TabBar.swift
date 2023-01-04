@@ -32,12 +32,12 @@ struct TabBar: View {
 //            ContentView()
 //                .tabItem {
 //                    Label("Menu", systemImage: "list.dash")
-//                }
-            //-----------------
-//            ContentView()
-//                .tabItem {
-//                    Label("Menu", systemImage: "list.dash")
-//                }
+//               }
+         
+            mytickets(tickets:ticket.sampledata)
+             .tabItem {
+                    Label("Ticket", systemImage: "ticket.fill")
+               }
         }
     }
 }
