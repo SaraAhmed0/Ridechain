@@ -122,7 +122,8 @@ struct ticketinitv: View {
         
         }
         .sheet(isPresented: $showSheetView) {
-                    ticketv()
+           
+            ticketv(nticket: nticket) .presentationDetents([.height (642) ])
                 }
         
         
