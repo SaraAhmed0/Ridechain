@@ -32,7 +32,7 @@ struct mytickets: View {
             }
             
             
-        }
+        }.background(colorp.slblue)
     }
 }
 
@@ -41,7 +41,7 @@ struct choosetickets_Previews: PreviewProvider {
       
             
             
-            mytickets(tickets:ticket.sampledata).background(colorp.slblue)
+            mytickets(tickets:ticket.sampledata)
         
         
         

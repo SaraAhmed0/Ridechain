@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ticketinitv: View {
     let nticket:ticket
+    @EnvironmentObject var dbTicket: TicketVM
     @State var showSheetView = false
     var body: some View {
        
@@ -61,7 +62,7 @@ struct ticketinitv: View {
                     .frame(height: 0.0)
                     
                     HStack{
-                        Text(nticket.pickup).font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
+                        Text(nticket.pickup ).font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
                         Spacer()
                         
                         Text(nticket.destnation).font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
@@ -118,13 +119,12 @@ struct ticketinitv: View {
                 
                 
                 
-            }
+            } .accentColor(.black)
         
         }
         .sheet(isPresented: $showSheetView) {
-           
             ticketv(nticket: nticket) .presentationDetents([.height (642) ])
-                }
+        }
         
         
         }
@@ -134,6 +134,6 @@ struct ticketinitv: View {
 struct ticketinitv_Previews: PreviewProvider {
     static var nticket = ticket.sampledata[0]
     static var previews: some View {
-        ticketinitv(nticket:nticket).background(colorp.slblue).previewLayout(.fixed(width: 400, height: 60))
+        ticketinitv(nticket: nticket).background(colorp.slblue).previewLayout(.fixed(width: 400, height: 60))
     }}
 

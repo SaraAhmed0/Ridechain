@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ticketv: View {
-    let nticket:ticket
+    let nticket:ticket 
     var body: some View {
         VStack(alignment:.leading){
             ZStack{
