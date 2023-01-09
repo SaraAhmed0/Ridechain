@@ -34,7 +34,7 @@ struct TabBar: View {
 //                    Label("Menu", systemImage: "list.dash")
 //               }
          
-            mytickets(tickets:ticket.sampledata)
+            mytickets()
              .tabItem {
                     Label("Ticket", systemImage: "ticket.fill")
                }
