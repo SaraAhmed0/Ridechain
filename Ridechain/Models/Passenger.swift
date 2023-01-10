@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 class Passenger: Codable, Identifiable{
     
    @DocumentID var id : String?
+    var passengerNationalID: String?
     var passengerEmail: String?
     var passengerPassword: String?
     var passengerName: String?
@@ -20,7 +21,8 @@ class Passenger: Codable, Identifiable{
     var walletTokens: Int?
 
     
-    init(passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", walletBalance: Double? = 0.0, walletTokens: Int? = 0  ) {
+    init(passengerNationalID:String? = "", passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", walletBalance: Double? = 0.0, walletTokens: Int? = 0  ) {
+        self.passengerNationalID = passengerNationalID
         self.passengerEmail = passengerEmail
         self.passengerPassword = passengerPassword
         self.passengerName = passengerName

@@ -121,6 +121,8 @@ struct signInView: View {
 struct signUpView: View {
     @State var email = ""
     @State var password = ""
+    @State var NationalID = ""
+    @State var Name = ""
     
     @EnvironmentObject var viewModel: authViewModel
 
@@ -131,6 +133,30 @@ struct signUpView: View {
             
             
             VStack{
+                
+                Text("National ID")
+                    .font(.system(size: 20).bold())
+                    .foregroundColor(Color(red:0/255 ,green:168/255 ,blue:184/255 ))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all)
+                
+                TextField("**********", text: $NationalID)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none )
+                    .padding()
+                    .background(Color(.white))
+                
+                Text("Name")
+                    .font(.system(size: 20).bold())
+                    .foregroundColor(Color(red:0/255 ,green:168/255 ,blue:184/255 ))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all)
+                
+                TextField("Sara Ahmed", text: $Name)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none )
+                    .padding()
+                    .background(Color(.white))
                 
                 Text("Email")
                     .font(.system(size: 20).bold())
@@ -166,7 +192,7 @@ struct signUpView: View {
                     guard !email.isEmpty, !password.isEmpty else {
                         return
                     }
-                    viewModel.signUp(email: email, password: password)
+                    viewModel.signUp(nationalID: NationalID, name: Name, email: email, password: password)
                     
                 }, label: {
                     Text("sign Up")

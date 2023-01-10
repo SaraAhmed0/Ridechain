@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 
 class Ticket: Codable, Identifiable {
      @DocumentID var id : String?
+    var ticketOwner : String?
     var relatedRide: String?
     var totaltickets: Int?
     var invoiceNo: Int?

@@ -9,6 +9,7 @@ import Foundation
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseAuth
 
 class PassengerVM: ObservableObject {
     let dbPassenger = Firestore.firestore()
@@ -41,7 +42,9 @@ class PassengerVM: ObservableObject {
     
     func addUser(_ passenger :Passenger){
         do{
-            var _ = try dbPassenger.collection("Passengers").addDocument(from: passenger)
+            if let id = Auth.auth().currentUser?.uid {
+                var _ = try dbPassenger.collection("Passengers").document(id).setData(from: passenger)
+            }
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")

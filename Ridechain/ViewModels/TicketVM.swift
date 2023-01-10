@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseAuth
 
 class TicketVM: ObservableObject {
     let dbTicket = Firestore.firestore()
@@ -21,13 +22,17 @@ class TicketVM: ObservableObject {
     }
     
     func loadData(){
-
+        
+        if (Auth.auth().currentUser?.uid != nil){
             dbTicket.collection("Tickets").addSnapshotListener { (querySnapshot, error) in
                 if let querySnapshot = querySnapshot {
                     self.tickets = querySnapshot.documents.compactMap { document in
                         do{
                             let x =  try document.data(as: Ticket.self)
-                            return x
+                            if (x.ticketOwner == Auth.auth().currentUser?.uid){
+                                return x
+                                
+                            }
                         }
                         catch {
                             print(error)
@@ -37,12 +42,14 @@ class TicketVM: ObservableObject {
                 }
                 
             }
+        }
         
     }
     
     
     func addTicket(_ ticket :Ticket){
         do{
+            ticket.ticketOwner = Auth.auth().currentUser?.uid
             var _ = try dbTicket.collection("Tickets").addDocument(from: ticket)
         }
         catch{
@@ -74,3 +81,5 @@ class TicketVM: ObservableObject {
     
     
 }
+
+
