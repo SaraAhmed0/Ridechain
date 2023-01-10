@@ -215,10 +215,10 @@ struct mytickets: View {
                 }.frame(height: 42.0)
 
                 HStack{
-                    Text(eticket.date ?? Date(), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
+                    Text(eticket.time ?? Date(), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
                     Spacer()
 
-                    Text(eticket.calculateDuration(eticket.date ?? Date(), duration: eticket.duration ?? 0), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
+                    Text(eticket.calculateDuration(eticket.time ?? Date(), duration: eticket.duration ?? 0), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
 
                 }
 

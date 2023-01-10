@@ -37,6 +37,7 @@ func makeRideCellView(_ ride:  Ride) -> some View {
             Text(ride.rideDropoff ?? "") // access to the rideDropoff attribute in ride object
             
             Text("\(ride.rideCapacity ?? 0)")
+            Text(ride.rideStartTime ?? Date(), style: .time)
            
             HStack{
                 Stepper("\(numOfTickets)", value: $numOfTickets, in: 1...10)

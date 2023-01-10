@@ -13,7 +13,7 @@ import FirebaseFirestoreSwift
 class Ride: Codable, Identifiable{
     
     @DocumentID var id : String?
-    var rideTime: Date?
+    var rideStartTime: Date?
     var rideDate: Date?
     var rideType: String?
     var ridePrice: Double?
@@ -24,8 +24,8 @@ class Ride: Codable, Identifiable{
     
     
     
-    init(rideTime: Date? = Date(), rideDate: Date? = Date(),  rideType: String? = "", ridePrice: Double? = 0.0, rideCapacity: Int? = 0, ridePickup: String = "", rideDropoff:String? = "" , rideDuration: Int? = 0 ) {
-        self.rideTime = rideTime
+    init(rideStartTime: Date? = Date(), rideDate: Date? = Date(),  rideType: String? = "", ridePrice: Double? = 0.0, rideCapacity: Int? = 0, ridePickup: String = "", rideDropoff:String? = "" , rideDuration: Int? = 0 ) {
+        self.rideStartTime = rideStartTime
         self.rideDate = rideDate
         self.rideType = rideType
         self.ridePrice = ridePrice
