@@ -26,6 +26,7 @@ struct mytickets: View {
                     
                     
                     
+                    
                 }
                 
             }
@@ -39,7 +40,7 @@ struct mytickets: View {
     
         
         func maketicketinitv(_ ticket:  Ticket) -> some View {
-            Button(action:{  self.showSheetView.toggle()}){
+            Button(action:{  showSheetView.toggle()}){
                 ZStack{
                     RoundedRectangle(cornerRadius: 25).fill(.white).frame(width: 357.0, height: 157.0)
                     
@@ -141,38 +142,42 @@ struct mytickets: View {
                     
                     
                 }.accentColor(.black)
-            } .sheet(isPresented: $showSheetView) {
-                let ticketsheet=maketicketsheet(eticket:ticket)
-                 ticketsheet.presentationDetents([.height (642) ])
-            }
+            } .sheet(isPresented: $showSheetView, content: {
+                maketicketsheet(ticket).presentationDetents([.medium])
+            })
+            // changed the size to medium
+//            {
+//                let ticketsheet=maketicketsheet(ticket)
+//                 ticketsheet.presentationDetents([.height (642) ])
+//            }
             
         }
     
-    func maketicketsheet(eticket: Ticket) -> some View {
+    func maketicketsheet(_ eticket: Ticket) -> some View {
 
-        
+
         VStack(alignment:.leading){
             ZStack{
                 RoundedRectangle(cornerRadius: 10).foregroundColor(colorp.dgreen).frame(width: 96, height: 28)
                 Text("valid").foregroundColor(.white)
             }
             Text("Sara Ahmed").font(.custom("Roboto-Medium",size:32)).fontWeight(.bold)
-            
+
             Text("Show this ticket at the entrance").font(.custom("Roboto-Medium",size:16)).fontWeight(.regular).foregroundColor(.gray)
             Divider()
-            
-            
-            
-       
+
+
+
+
             VStack{
-                
+
                 HStack{
-                    
-                    
+
+
                     Text("From").font(.custom("Roboto-Medium",size:16)).padding(.leading, 30).foregroundColor(colorp.lblue)
-                    
-                    
-                    
+
+
+
                     ZStack{
                         Circle()
                             .fill(.black).shadow(radius: 100)
@@ -180,7 +185,7 @@ struct mytickets: View {
                         Line()
                             .stroke(style: StrokeStyle(lineWidth: 1, dash: [2]))
                         .frame(width: 66, height: 1)}
-                    
+
                     Image(systemName:"bus.doubledecker.fill").foregroundColor(colorp.lblue)
                         .padding(.horizontal, -13.0)
                     ZStack{
@@ -190,36 +195,36 @@ struct mytickets: View {
                         Line()
                             .stroke(style: StrokeStyle(lineWidth: 1, dash: [2]))
                         .frame(width: 66, height: 1)}
-                    
-                    
+
+
                     Text("To").font(.custom("Roboto-Medium",size:16)).padding(.trailing, 50).foregroundColor(colorp.lblue)
-                    
-                    
-                    
-                    
+
+
+
+
                 }
-                
+
                 .frame(height: 0.0)
-                
+
                 HStack{
                     Text(eticket.pickup ?? "").font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
                     Spacer()
-                    
+
                     Text(eticket.dropoff ?? "" ).font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
-                    
+
                 }.frame(height: 42.0)
-                
+
                 HStack{
                     Text("10:00 am").font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
                     Spacer()
-                    
+
                     Text("10:10 am").font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
-                    
+
                 }
-                
+
                 Spacer()
                     .frame(height: 44.0)
-                
+
                 HStack {
                     Label("Date", systemImage: "calendar").foregroundColor(colorp.lblue).padding(.leading, 15.0)
                     Spacer()
@@ -231,15 +236,15 @@ struct mytickets: View {
                     Spacer()
                     Text(eticket.type ?? "").padding(.trailing,30)
                 }.padding()
-                
-                
-            
-                
+
+
+
+
                 Spacer()
                     .frame(height: 44)
-                
-                
-                
+
+
+
                 HStack {
                     Label("Total Tickets", systemImage: "person.3").foregroundColor(colorp.lblue).padding(.leading, 15.0)
                     Spacer()
@@ -251,23 +256,25 @@ struct mytickets: View {
                     Spacer()
                     Text(String(format: "%.2f", eticket.price ?? 0)).padding(.trailing,30)
                 }.padding()
-                
-                
-                
-                
+
+
+
+
             }.padding()
             Divider().strikethrough()
             Spacer()
                 .frame(width: 0.0, height: 150.0)
         }.padding()
-        
+
     }
-    
+
     
 
        
     }
-    
+
+
+
     
 
 

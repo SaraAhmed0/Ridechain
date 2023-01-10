@@ -23,11 +23,10 @@ struct TabBar: View {
                     Label("Menu", systemImage: "list.dash")
                 }
             //-----------------
-//
-//            walletPage()
-//                .tabItem {
-//                    Label("Order", systemImage: "square.and.pencil")
-//                }
+            walletPage()
+                .tabItem {
+                    Label("Wallet", systemImage: "ticket")
+                }
             //-----------------
 //            ContentView()
 //                .tabItem {
@@ -36,7 +35,7 @@ struct TabBar: View {
          
             mytickets()
              .tabItem {
-                    Label("Ticket", systemImage: "ticket.fill")
+                    Label("Tickets", systemImage: "ticket.fill")
                }
         }
     }
