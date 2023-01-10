@@ -215,10 +215,10 @@ struct mytickets: View {
                 }.frame(height: 42.0)
 
                 HStack{
-                    Text("10:00 am").font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
+                    Text(eticket.date ?? Date(), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
                     Spacer()
 
-                    Text("10:10 am").font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
+                    Text(eticket.calculateDuration(eticket.date ?? Date(), duration: eticket.duration ?? 0), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
 
                 }
 
@@ -232,11 +232,10 @@ struct mytickets: View {
                         .padding(.trailing, 20).foregroundColor(colorp.lblue)
                 }.frame(height: 1.0).padding(.horizontal)
                 HStack{
-                    Text("").padding(.leading, 30.0)
+                    Text(eticket.date ?? Date(), style: .date).padding(.leading, 30.0)
                     Spacer()
                     Text(eticket.type ?? "").padding(.trailing,30)
                 }.padding()
-
 
 
 
@@ -267,7 +266,7 @@ struct mytickets: View {
         }.padding()
 
     }
-
+    
     
 
        

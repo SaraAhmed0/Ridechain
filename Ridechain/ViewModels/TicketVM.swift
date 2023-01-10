@@ -79,6 +79,25 @@ class TicketVM: ObservableObject {
         return Int.random(in: 100000...999999)
     }
     
+    func calculateDuration(_ startTime : Date, duration: Int) -> Date {
+        
+        // convert Date to TimeInterval (typealias for Double)
+        let timeInterval = startTime.timeIntervalSince1970
+
+        // convert to Integer
+        let timeInt = Int(timeInterval)
+        
+        let endTime = duration + timeInt
+        
+        let endTimeFormat = TimeInterval(endTime)
+
+        // create NSDate from Double (NSTimeInterval)
+        let myNSDate = Date(timeIntervalSince1970: endTimeFormat)
+        
+        return myNSDate
+        
+    }
+    
     
 }
 
