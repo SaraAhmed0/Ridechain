@@ -13,7 +13,7 @@ struct ContentView: View {
     @EnvironmentObject var dbPassenger: PassengerVM
     @EnvironmentObject var dbRide: RideVM
     @EnvironmentObject var dbTicket: TicketVM
-    
+    @EnvironmentObject var randomId: RandomIdGenerator
     
     @State private var numOfTickets = 1
     
@@ -44,7 +44,8 @@ func makeRideCellView(_ ride:  Ride) -> some View {
                 }
             Button{
                 dbRide.decrementCapacity(ride, numOfTickets)
-                dbTicket.issueTicket(ride, numOfTickets, calculatePrice(ride, numOfTickets))
+                dbTicket.issueTicket(ride, numOfTickets, calculatePrice(ride, numOfTickets), randomId.randomIds[0].number)
+                randomId.incrementCounter()
             } label: {
                 ZStack{
                     Rectangle()

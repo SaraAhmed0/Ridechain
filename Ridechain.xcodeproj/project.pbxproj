@@ -33,6 +33,7 @@
 		DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC547B182948AD9C00AD95C0 /* ContentView.swift */; };
 		DC547B1B2948AD9D00AD95C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC547B1A2948AD9D00AD95C0 /* Assets.xcassets */; };
 		DC547B1E2948AD9D00AD95C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC547B1D2948AD9D00AD95C0 /* Preview Assets.xcassets */; };
+		DC571283296DAB6A006D1370 /* RandomId.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC571282296DAB6A006D1370 /* RandomId.swift */; };
 		DC84F242295C685700379060 /* PassengerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F241295C685700379060 /* PassengerVM.swift */; };
 		DC84F244295C687600379060 /* RideVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F243295C687500379060 /* RideVM.swift */; };
 		DC84F246295C689800379060 /* TicketVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F245295C689800379060 /* TicketVM.swift */; };
@@ -62,6 +63,7 @@
 		DC547B182948AD9C00AD95C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC547B1A2948AD9D00AD95C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC547B1D2948AD9D00AD95C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC571282296DAB6A006D1370 /* RandomId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomId.swift; sourceTree = "<group>"; };
 		DC84F241295C685700379060 /* PassengerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerVM.swift; sourceTree = "<group>"; };
 		DC84F243295C687500379060 /* RideVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideVM.swift; sourceTree = "<group>"; };
 		DC84F245295C689800379060 /* TicketVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVM.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				DC84F241295C685700379060 /* PassengerVM.swift */,
 				DC84F243295C687500379060 /* RideVM.swift */,
 				DC84F245295C689800379060 /* TicketVM.swift */,
+				DC571282296DAB6A006D1370 /* RandomId.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				1439AAA029645CE600ABBEC8 /* walletActivity.swift in Sources */,
 				47913449295B4BEB001FA738 /* tickettest.swift in Sources */,
 				DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */,
+				DC571283296DAB6A006D1370 /* RandomId.swift in Sources */,
 				DC547B172948AD9C00AD95C0 /* RidechainApp.swift in Sources */,
 				DC539E1A29512230004A9760 /* Ticket.swift in Sources */,
 				4791344B295B4C5C001FA738 /* ticketv.swift in Sources */,

@@ -10,6 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseAuth
 
+
 class TicketVM: ObservableObject {
     let dbTicket = Firestore.firestore()
     
@@ -70,33 +71,11 @@ class TicketVM: ObservableObject {
         
     }
     
-    func issueTicket(_ ride : Ride, _ total : Int, _ price : Double){
-        var ticket = Ticket(relatedRide: ride.id, totaltickets: total, invoiceNo: generateInvoice(), time: ride.rideTime, date: ride.rideDate, duration: ride.rideDuration, price: price, dropoff: ride.rideDropoff, pickup: ride.ridePickup, type: ride.rideType)
+    func issueTicket(_ ride : Ride, _ total : Int, _ price : Double, _ id : Int){
+        let ticket = Ticket(relatedRide: ride.id, totaltickets: total, invoiceNo: id, time: ride.rideTime, date: ride.rideDate, duration: ride.rideDuration, price: price, dropoff: ride.rideDropoff, pickup: ride.ridePickup, type: ride.rideType)
         addTicket(ticket)
     }
     
-    func generateInvoice() -> Int{
-        return Int.random(in: 100000...999999)
-    }
-    
-    func calculateDuration(_ startTime : Date, duration: Int) -> Date {
-        
-        // convert Date to TimeInterval (typealias for Double)
-        let timeInterval = startTime.timeIntervalSince1970
-
-        // convert to Integer
-        let timeInt = Int(timeInterval)
-        
-        let endTime = duration + timeInt
-        
-        let endTimeFormat = TimeInterval(endTime)
-
-        // create NSDate from Double (NSTimeInterval)
-        let myNSDate = Date(timeIntervalSince1970: endTimeFormat)
-        
-        return myNSDate
-        
-    }
     
     
 }

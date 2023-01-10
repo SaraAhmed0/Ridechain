@@ -15,6 +15,8 @@ struct RidechainApp: App {
     @ObservedObject var dbPassenger: PassengerVM
     @ObservedObject var dbRide: RideVM
     @ObservedObject var dbTicket: TicketVM
+    @ObservedObject var randomId: RandomIdGenerator
+
     
     init() {
         FirebaseApp.configure()
@@ -22,6 +24,8 @@ struct RidechainApp: App {
         dbPassenger = PassengerVM()
         dbRide = RideVM()
         dbTicket = TicketVM()
+        randomId = RandomIdGenerator()
+      
     }
     var body: some Scene {
         WindowGroup {
@@ -30,6 +34,8 @@ struct RidechainApp: App {
                 .environmentObject(dbPassenger)
                 .environmentObject(dbRide)
                 .environmentObject(dbTicket)
+                .environmentObject(randomId)
+
             
         }
 
