@@ -13,6 +13,7 @@ struct mytickets: View {
 
    
     @State var showSheetView = false
+    @State var selected:Ticket?
     var body: some View {
         
         VStack{
@@ -20,27 +21,45 @@ struct mytickets: View {
             Divider()
             Text("Coming Tickets").font(.custom("Roboto-Medium",size:20)).padding(.trailing, 200.0)
             ScrollView {
-                VStack(alignment:.leading) {
+                
+                ForEach( dbTicket.tickets,id:\.id)
+                {ticket in
                     
-                    ForEach(dbTicket.tickets, content:maketicketinitv)
+                    Button(action:{ selected = Ticket(relatedRide: ticket.relatedRide, totaltickets: ticket.totaltickets, invoiceNo: ticket.invoiceNo, time :ticket.time, date :ticket.date, duration : ticket.duration, price :ticket.price,
+                                                      dropoff : ticket.dropoff,
+                                                      pickup : ticket.pickup,
+                                                      type : ticket.type)})
+                    {
+                        maketicketinitv(ticket)
+                        
+                        
+                        
+                    }.sheet(item: $selected) {parameter in
+                        
+                        maketicketsheet(selected ?? Ticket()).presentationDetents([.medium])
+                        
+                        
+                        
+                        
+                        
+                        
+                    }
                     
                     
                     
                     
                 }
                 
+                
+                
             }
             
-            
-        }
-        
-        
-        .background(colorp.slblue)
+        }.background(colorp.slblue)
     }
     
         
         func maketicketinitv(_ ticket:  Ticket) -> some View {
-            Button(action:{  showSheetView.toggle()}){
+           
                 ZStack{
                     RoundedRectangle(cornerRadius: 25).fill(.white).frame(width: 357.0, height: 157.0)
                     
@@ -142,25 +161,26 @@ struct mytickets: View {
                     
                     
                 }.accentColor(.black)
-            } .sheet(isPresented: $showSheetView, content: {
-                maketicketsheet(ticket).presentationDetents([.medium])
-            })
+            
             // changed the size to medium
 //            {
 //                let ticketsheet=maketicketsheet(ticket)
-//                 ticketsheet.presentationDetents([.height (642) ])
-//            }
+//            ticketsheet.presentationDetents([.height (642) ])
+            }
             
-        }
+        
     
     func maketicketsheet(_ eticket: Ticket) -> some View {
 
 
         VStack(alignment:.leading){
+            Spacer()
+                .frame(height: 205.0)
             ZStack{
                 RoundedRectangle(cornerRadius: 10).foregroundColor(colorp.dgreen).frame(width: 96, height: 28)
                 Text("valid").foregroundColor(.white)
             }
+            Spacer()
             Text("Sara Ahmed").font(.custom("Roboto-Medium",size:32)).fontWeight(.bold)
 
             Text("Show this ticket at the entrance").font(.custom("Roboto-Medium",size:16)).fontWeight(.regular).foregroundColor(.gray)
@@ -215,10 +235,10 @@ struct mytickets: View {
                 }.frame(height: 42.0)
 
                 HStack{
-                    Text(eticket.time ?? Date(), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
+                    Text(eticket.date ?? Date(), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.leading, 31.0)
                     Spacer()
 
-                    Text(eticket.calculateDuration(eticket.time ?? Date(), duration: eticket.duration ?? 0), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
+                    Text(eticket.calculateDuration(eticket.date ?? Date(), duration: eticket.duration ?? 0), style: .time).font(.custom("Roboto-Medium",size:16)).padding(.trailing,32.0)
 
                 }
 
