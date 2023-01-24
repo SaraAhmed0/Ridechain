@@ -24,7 +24,7 @@ struct walletPage: View {
                                 .font(.system(size: 20))
                                 .fontWeight(.bold)
                                 .padding()
-                                .offset(y:50)
+                                .offset(y:40)
                                 .offset(x: -150)
                         }.padding(30)
                         HStack{
@@ -76,6 +76,7 @@ struct walletPage: View {
                                 .font(.system(size: 30))
                                 .fontWeight(.bold)
                                 .offset(x: -120)
+                                .offset(y:-10)
                         }
                         
                         HStack{
@@ -83,6 +84,7 @@ struct walletPage: View {
                                 .frame(width: 350,height: 50, alignment: .leading)
                                 .background(Color(.white))
                                 .cornerRadius(8)
+                                .offset(y: -20)
                             
                         }
                         
@@ -95,6 +97,7 @@ struct walletPage: View {
                                     .frame(width: 350,height: 50)
                                     .background(Color(.red))
                                     .cornerRadius(8)
+                                    .offset(y:-20)
                                 
                                 
                                 
