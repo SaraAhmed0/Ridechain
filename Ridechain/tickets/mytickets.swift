@@ -5,6 +5,7 @@
 //  Created by Danah  on 27/12/2022.
 //
 
+
 import SwiftUI
 import Foundation
 struct mytickets: View {
@@ -24,32 +25,38 @@ struct mytickets: View {
                 
                 ForEach( dbTicket.tickets,id:\.id)
                 {ticket in
-                    
-                    Button(action:{ selected = Ticket(relatedRide: ticket.relatedRide, totaltickets: ticket.totaltickets, invoiceNo: ticket.invoiceNo, time :ticket.time, date :ticket.date, duration : ticket.duration, price :ticket.price,
-                                                      dropoff : ticket.dropoff,
-                                                      pickup : ticket.pickup,
-                                                      type : ticket.type)})
+                    if checktime(ticket)
+                        
                     {
-                        maketicketinitv(ticket)
-                        
-                        
-                        
-                    }.sheet(item: $selected) {parameter in
-                        
-                        maketicketsheet(selected ?? Ticket()).presentationDetents([.medium])
-                        
-                        
+                        Button(action:{ selected = Ticket(relatedRide: ticket.relatedRide, totaltickets: ticket.totaltickets, invoiceNo: ticket.invoiceNo, time :ticket.time, date :ticket.date, duration : ticket.duration, price :ticket.price,
+                                                          dropoff : ticket.dropoff,
+                                                          pickup : ticket.pickup,
+                                                          type : ticket.type)})
+                        {
+                            maketicketinitv(ticket)
+                            
+                            
+                            
+                        }.sheet(item: $selected) {parameter in
+                            
+                            maketicketsheet(selected ?? Ticket()).presentationDetents([.medium])
+                            
+                            
+                            
+                            
+                            
+                            
+                        }
                         
                         
                         
                         
                     }
                     
-                    
-                    
-                    
+                    else{
+                        EmptyView()
+                    }
                 }
-                
                 
                 
             }
@@ -287,7 +294,18 @@ struct mytickets: View {
 
     }
     
-    
+    func checktime(_ ticket :Ticket)-> Bool
+    {
+        let date1 = Date()
+        let date2 = ticket.date ?? Date()
+        if date1 <= date2  {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
 
        
     }
@@ -308,3 +326,4 @@ struct choosetickets_Previews: PreviewProvider {
         
         }
     }
+
