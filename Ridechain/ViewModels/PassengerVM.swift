@@ -22,20 +22,24 @@ class PassengerVM: ObservableObject {
     }
     
     func loadData(){
-        dbPassenger.collection("Passengers").addSnapshotListener { (querySnapshot, error) in
-            if let querySnapshot = querySnapshot {
-                self.passengers = querySnapshot.documents.compactMap { document in
-                    do{
-                        let x =  try document.data(as: Passenger.self)
-                        return x
+        if (Auth.auth().currentUser?.uid != nil){
+            dbPassenger.collection("Passengers").addSnapshotListener { (querySnapshot, error) in
+                if let querySnapshot = querySnapshot {
+                    self.passengers = querySnapshot.documents.compactMap { document in
+                        do{
+                            let x =  try document.data(as: Passenger.self)
+                            if (x.id == Auth.auth().currentUser?.uid){
+                                return x
+                            }
+                        }
+                        catch {
+                            print(error)
+                        }
+                        return nil
                     }
-                    catch {
-                        print(error)
-                    }
-                    return nil
                 }
+                
             }
-            
         }
     }
     
@@ -50,6 +54,15 @@ class PassengerVM: ObservableObject {
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
         
+    }
+    
+    func getEmail(_ passengers : [Passenger]) -> String {
+        for passenger in passengers {
+            if (passenger.id == Auth.auth().currentUser?.uid){
+                return passenger.passengerEmail ?? ""
+            }
+        }
+        return "NA"
     }
     
     

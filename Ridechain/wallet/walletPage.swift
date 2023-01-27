@@ -81,7 +81,7 @@ struct walletPage: View {
                         }
                         
                         HStack{
-                            Text(String(email))
+                            Text(String(dbPassenger.getEmail(dbPassenger.passengers)))
                                 .frame(width: 350,height: 50, alignment: .leading)
                                 .background(Color(.white))
                                 .cornerRadius(8)
