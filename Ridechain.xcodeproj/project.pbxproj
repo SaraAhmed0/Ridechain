@@ -18,6 +18,16 @@
 		47913451295B4E48001FA738 /* mytickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47913450295B4E48001FA738 /* mytickets.swift */; };
 		47913453295B4EC5001FA738 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47913452295B4EC5001FA738 /* Roboto-Regular.ttf */; };
 		47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD5F6B295224BA00EC4CDF /* colors.swift */; };
+		BF1287322985B22D00913162 /* BillSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12872A2985B22D00913162 /* BillSheetView.swift */; };
+		BF1287332985B22D00913162 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12872B2985B22D00913162 /* ColorExt.swift */; };
+		BF1287342985B22D00913162 /* SearchListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12872C2985B22D00913162 /* SearchListCellView.swift */; };
+		BF1287352985B22D00913162 /* BookTicketSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12872D2985B22D00913162 /* BookTicketSheetView.swift */; };
+		BF1287362985B22D00913162 /* FontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12872E2985B22D00913162 /* FontExt.swift */; };
+		BF1287372985B22D00913162 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12872F2985B22D00913162 /* SearchView.swift */; };
+		BF1287382985B22D00913162 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1287302985B22D00913162 /* SearchListView.swift */; };
+		BF1287392985B22D00913162 /* TicketBookedPopupSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1287312985B22D00913162 /* TicketBookedPopupSuccessView.swift */; };
+		BF12873C2985B2EB00913162 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12873A2985B2EB00913162 /* TicketViewModel.swift */; };
+		BF12873D2985B2EB00913162 /* RideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12873B2985B2EB00913162 /* RideViewModel.swift */; };
 		DC539E0329511B78004A9760 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0229511B78004A9760 /* FirebaseAuth */; };
 		DC539E0529511B78004A9760 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0429511B78004A9760 /* FirebaseDatabase */; };
 		DC539E0729511B78004A9760 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0629511B78004A9760 /* FirebaseDatabaseSwift */; };
@@ -52,6 +62,16 @@
 		47913450295B4E48001FA738 /* mytickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mytickets.swift; sourceTree = "<group>"; };
 		47913452295B4EC5001FA738 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		47AD5F6B295224BA00EC4CDF /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		BF12872A2985B22D00913162 /* BillSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillSheetView.swift; sourceTree = "<group>"; };
+		BF12872B2985B22D00913162 /* ColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExt.swift; path = Views/ColorExt.swift; sourceTree = "<group>"; };
+		BF12872C2985B22D00913162 /* SearchListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListCellView.swift; sourceTree = "<group>"; };
+		BF12872D2985B22D00913162 /* BookTicketSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTicketSheetView.swift; sourceTree = "<group>"; };
+		BF12872E2985B22D00913162 /* FontExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontExt.swift; path = Views/FontExt.swift; sourceTree = "<group>"; };
+		BF12872F2985B22D00913162 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		BF1287302985B22D00913162 /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		BF1287312985B22D00913162 /* TicketBookedPopupSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketBookedPopupSuccessView.swift; sourceTree = "<group>"; };
+		BF12873A2985B2EB00913162 /* TicketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewModel.swift; sourceTree = "<group>"; };
+		BF12873B2985B2EB00913162 /* RideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewModel.swift; sourceTree = "<group>"; };
 		DC539E0E29511C34004A9760 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC539E1129511E84004A9760 /* authViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authViewModel.swift; sourceTree = "<group>"; };
 		DC539E152951221D004A9760 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
@@ -121,6 +141,8 @@
 		DC539E0D29511BAF004A9760 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				BF12873B2985B2EB00913162 /* RideViewModel.swift */,
+				BF12873A2985B2EB00913162 /* TicketViewModel.swift */,
 				DC539E1129511E84004A9760 /* authViewModel.swift */,
 				DC84F241295C685700379060 /* PassengerVM.swift */,
 				DC84F243295C687500379060 /* RideVM.swift */,
@@ -134,6 +156,12 @@
 			isa = PBXGroup;
 			children = (
 				DC539E1C2951CCBF004A9760 /* SignViews.swift */,
+				BF12872A2985B22D00913162 /* BillSheetView.swift */,
+				BF12872D2985B22D00913162 /* BookTicketSheetView.swift */,
+				BF12872C2985B22D00913162 /* SearchListCellView.swift */,
+				BF1287302985B22D00913162 /* SearchListView.swift */,
+				BF12872F2985B22D00913162 /* SearchView.swift */,
+				BF1287312985B22D00913162 /* TicketBookedPopupSuccessView.swift */,
 				DC84F2472965553200379060 /* TabBar.swift */,
 			);
 			path = Views;
@@ -160,6 +188,8 @@
 		DC547B152948AD9C00AD95C0 /* Ridechain */ = {
 			isa = PBXGroup;
 			children = (
+				BF12872B2985B22D00913162 /* ColorExt.swift */,
+				BF12872E2985B22D00913162 /* FontExt.swift */,
 				1439AA9C29645C9F00ABBEC8 /* wallet */,
 				47913440295B4AD9001FA738 /* tickets */,
 				DC539E1B2951CC77004A9760 /* Views */,
@@ -266,22 +296,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1287342985B22D00913162 /* SearchListCellView.swift in Sources */,
 				DC84F246295C689800379060 /* TicketVM.swift in Sources */,
 				DC84F244295C687600379060 /* RideVM.swift in Sources */,
 				DC539E1229511E84004A9760 /* authViewModel.swift in Sources */,
 				47913451295B4E48001FA738 /* mytickets.swift in Sources */,
 				1439AA9E29645CB900ABBEC8 /* walletPage.swift in Sources */,
+				BF1287392985B22D00913162 /* TicketBookedPopupSuccessView.swift in Sources */,
 				47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */,
 				1439AAA229645D1100ABBEC8 /* Wallet.swift in Sources */,
 				4791344F295B4E1C001FA738 /* ticketinitv.swift in Sources */,
 				DC539E162951221D004A9760 /* Passenger.swift in Sources */,
+				BF1287352985B22D00913162 /* BookTicketSheetView.swift in Sources */,
 				DC84F242295C685700379060 /* PassengerVM.swift in Sources */,
+				BF12873D2985B2EB00913162 /* RideViewModel.swift in Sources */,
+				BF1287382985B22D00913162 /* SearchListView.swift in Sources */,
 				1439AAA029645CE600ABBEC8 /* walletActivity.swift in Sources */,
 				47913449295B4BEB001FA738 /* tickettest.swift in Sources */,
+				BF12873C2985B2EB00913162 /* TicketViewModel.swift in Sources */,
 				DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */,
+				BF1287322985B22D00913162 /* BillSheetView.swift in Sources */,
 				DC571283296DAB6A006D1370 /* RandomId.swift in Sources */,
 				DC547B172948AD9C00AD95C0 /* RidechainApp.swift in Sources */,
+				BF1287362985B22D00913162 /* FontExt.swift in Sources */,
+				BF1287372985B22D00913162 /* SearchView.swift in Sources */,
 				DC539E1A29512230004A9760 /* Ticket.swift in Sources */,
+				BF1287332985B22D00913162 /* ColorExt.swift in Sources */,
 				4791344B295B4C5C001FA738 /* ticketv.swift in Sources */,
 				4791344D295B4CD7001FA738 /* linestruct.swift in Sources */,
 				DC539E1D2951CCBF004A9760 /* SignViews.swift in Sources */,

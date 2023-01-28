@@ -32,7 +32,10 @@ struct TabBar: View {
 //                .tabItem {
 //                    Label("Menu", systemImage: "list.dash")
 //               }
-         
+         SearchView()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass.circle.fill")
+                }
             mytickets()
              .tabItem {
                     Label("Tickets", systemImage: "ticket.fill")
