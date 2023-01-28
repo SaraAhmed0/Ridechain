@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15F7B80D796118E87DF9087D /* Pods_RideBooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64A158E069FC0F0A3CAEDC4 /* Pods_RideBooking.framework */; };
+		58FF77BB296AFD7D002F3101 /* RideBookingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF77BA296AFD7D002F3101 /* RideBookingApp.swift */; };
+		58FF77BD296AFD7D002F3101 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF77BC296AFD7D002F3101 /* ContentView.swift */; };
+		58FF77BF296AFD81002F3101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58FF77BE296AFD81002F3101 /* Assets.xcassets */; };
+		58FF77C2296AFD81002F3101 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58FF77C1296AFD81002F3101 /* Preview Assets.xcassets */; };
+		BF26F7A229709FC100F30573 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF26F79F29709FC100F30573 /* Passenger.swift */; };
+		BF26F7A329709FC100F30573 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF26F7A029709FC100F30573 /* Ticket.swift */; };
+		BF26F7A429709FC100F30573 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF26F7A129709FC100F30573 /* Ride.swift */; };
+		BF3BD791297DBA3F00960464 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3BD790297DBA3F00960464 /* GoogleService-Info.plist */; };
+		BF542F2D2972055B00797CA0 /* BookTicketSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542F292972055B00797CA0 /* BookTicketSheetView.swift */; };
+		BF542F2E2972055B00797CA0 /* BillSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542F2A2972055B00797CA0 /* BillSheetView.swift */; };
+		BF542F2F2972055B00797CA0 /* SearchListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542F2B2972055B00797CA0 /* SearchListCellView.swift */; };
+		BF542F302972055B00797CA0 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542F2C2972055B00797CA0 /* SearchListView.swift */; };
+		BF542F32297205CD00797CA0 /* FontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542F31297205CD00797CA0 /* FontExt.swift */; };
+		BF542F342972067600797CA0 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542F332972067600797CA0 /* ColorExt.swift */; };
+		BF6493B02970A323000404E7 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6493AF2970A323000404E7 /* TicketViewModel.swift */; };
+		BFDCA6DA2975DCEE004C4BEE /* RideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCA6D92975DCEE004C4BEE /* RideViewModel.swift */; };
+		BFE402C02975F38900E08DB1 /* TicketBookedPopupSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE402BF2975F38900E08DB1 /* TicketBookedPopupSuccessView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19974688D18D3371FD70DA03 /* Pods-RideBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideBooking.release.xcconfig"; path = "Target Support Files/Pods-RideBooking/Pods-RideBooking.release.xcconfig"; sourceTree = "<group>"; };
+		58FF77B7296AFD7D002F3101 /* RideBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58FF77BA296AFD7D002F3101 /* RideBookingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideBookingApp.swift; sourceTree = "<group>"; };
+		58FF77BC296AFD7D002F3101 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		58FF77BE296AFD81002F3101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58FF77C1296AFD81002F3101 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BF26F79F29709FC100F30573 /* Passenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		BF26F7A029709FC100F30573 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		BF26F7A129709FC100F30573 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		BF3BD790297DBA3F00960464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF542F292972055B00797CA0 /* BookTicketSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTicketSheetView.swift; sourceTree = "<group>"; };
+		BF542F2A2972055B00797CA0 /* BillSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillSheetView.swift; sourceTree = "<group>"; };
+		BF542F2B2972055B00797CA0 /* SearchListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListCellView.swift; sourceTree = "<group>"; };
+		BF542F2C2972055B00797CA0 /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		BF542F31297205CD00797CA0 /* FontExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontExt.swift; sourceTree = "<group>"; };
+		BF542F332972067600797CA0 /* ColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
+		BF6493AF2970A323000404E7 /* TicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewModel.swift; sourceTree = "<group>"; };
+		BFDCA6D92975DCEE004C4BEE /* RideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideViewModel.swift; sourceTree = "<group>"; };
+		BFE402BF2975F38900E08DB1 /* TicketBookedPopupSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketBookedPopupSuccessView.swift; sourceTree = "<group>"; };
+		E64A158E069FC0F0A3CAEDC4 /* Pods_RideBooking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideBooking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8F44387143697D55F08250 /* Pods-RideBooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideBooking.debug.xcconfig"; path = "Target Support Files/Pods-RideBooking/Pods-RideBooking.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58FF77B4296AFD7D002F3101 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F7B80D796118E87DF9087D /* Pods_RideBooking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A6829635EE0731D18659A8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F44387143697D55F08250 /* Pods-RideBooking.debug.xcconfig */,
+				19974688D18D3371FD70DA03 /* Pods-RideBooking.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		58FF77AE296AFD7D002F3101 = {
+			isa = PBXGroup;
+			children = (
+				58FF77B9296AFD7D002F3101 /* RideBooking */,
+				58FF77B8296AFD7D002F3101 /* Products */,
+				1A6829635EE0731D18659A8B /* Pods */,
+				99B008332CF46E71016C6FE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		58FF77B8296AFD7D002F3101 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58FF77B7296AFD7D002F3101 /* RideBooking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58FF77B9296AFD7D002F3101 /* RideBooking */ = {
+			isa = PBXGroup;
+			children = (
+				BF6493AE2970A312000404E7 /* ViewModels */,
+				58FF77BA296AFD7D002F3101 /* RideBookingApp.swift */,
+				58FF77BC296AFD7D002F3101 /* ContentView.swift */,
+				BF26F79E29709FC100F30573 /* Models */,
+				58FF77BE296AFD81002F3101 /* Assets.xcassets */,
+				58FF77C0296AFD81002F3101 /* Preview Content */,
+				BF542F2A2972055B00797CA0 /* BillSheetView.swift */,
+				BF542F292972055B00797CA0 /* BookTicketSheetView.swift */,
+				BF542F2B2972055B00797CA0 /* SearchListCellView.swift */,
+				BF542F332972067600797CA0 /* ColorExt.swift */,
+				BFE402BF2975F38900E08DB1 /* TicketBookedPopupSuccessView.swift */,
+				BF542F2C2972055B00797CA0 /* SearchListView.swift */,
+				BF542F31297205CD00797CA0 /* FontExt.swift */,
+				BF3BD790297DBA3F00960464 /* GoogleService-Info.plist */,
+			);
+			path = RideBooking;
+			sourceTree = "<group>";
+		};
+		58FF77C0296AFD81002F3101 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				58FF77C1296AFD81002F3101 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		99B008332CF46E71016C6FE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E64A158E069FC0F0A3CAEDC4 /* Pods_RideBooking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF26F79E29709FC100F30573 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF26F79F29709FC100F30573 /* Passenger.swift */,
+				BF26F7A029709FC100F30573 /* Ticket.swift */,
+				BF26F7A129709FC100F30573 /* Ride.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF6493AE2970A312000404E7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BF6493AF2970A323000404E7 /* TicketViewModel.swift */,
+				BFDCA6D92975DCEE004C4BEE /* RideViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58FF77B6296AFD7D002F3101 /* RideBooking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58FF77C5296AFD81002F3101 /* Build configuration list for PBXNativeTarget "RideBooking" */;
+			buildPhases = (
+				7AAB1CD21EE0546F1EFE5DAA /* [CP] Check Pods Manifest.lock */,
+				58FF77B3296AFD7D002F3101 /* Sources */,
+				58FF77B4296AFD7D002F3101 /* Frameworks */,
+				58FF77B5296AFD7D002F3101 /* Resources */,
+				FD4897C78F20FDC62964D4F6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RideBooking;
+			productName = RideBooking;
+			productReference = 58FF77B7296AFD7D002F3101 /* RideBooking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58FF77AF296AFD7D002F3101 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					58FF77B6296AFD7D002F3101 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 58FF77B2296AFD7D002F3101 /* Build configuration list for PBXProject "RideBooking" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58FF77AE296AFD7D002F3101;
+			productRefGroup = 58FF77B8296AFD7D002F3101 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58FF77B6296AFD7D002F3101 /* RideBooking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58FF77B5296AFD7D002F3101 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58FF77C2296AFD81002F3101 /* Preview Assets.xcassets in Resources */,
+				BF3BD791297DBA3F00960464 /* GoogleService-Info.plist in Resources */,
+				58FF77BF296AFD81002F3101 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7AAB1CD21EE0546F1EFE5DAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RideBooking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4897C78F20FDC62964D4F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RideBooking/Pods-RideBooking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RideBooking/Pods-RideBooking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RideBooking/Pods-RideBooking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58FF77B3296AFD7D002F3101 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF542F302972055B00797CA0 /* SearchListView.swift in Sources */,
+				BF6493B02970A323000404E7 /* TicketViewModel.swift in Sources */,
+				58FF77BD296AFD7D002F3101 /* ContentView.swift in Sources */,
+				BF26F7A329709FC100F30573 /* Ticket.swift in Sources */,
+				BF542F2E2972055B00797CA0 /* BillSheetView.swift in Sources */,
+				BFDCA6DA2975DCEE004C4BEE /* RideViewModel.swift in Sources */,
+				BF542F32297205CD00797CA0 /* FontExt.swift in Sources */,
+				BFE402C02975F38900E08DB1 /* TicketBookedPopupSuccessView.swift in Sources */,
+				BF26F7A229709FC100F30573 /* Passenger.swift in Sources */,
+				BF542F2F2972055B00797CA0 /* SearchListCellView.swift in Sources */,
+				BF542F2D2972055B00797CA0 /* BookTicketSheetView.swift in Sources */,
+				58FF77BB296AFD7D002F3101 /* RideBookingApp.swift in Sources */,
+				BF26F7A429709FC100F30573 /* Ride.swift in Sources */,
+				BF542F342972067600797CA0 /* ColorExt.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		58FF77C3296AFD81002F3101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		58FF77C4296AFD81002F3101 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58FF77C6296AFD81002F3101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE8F44387143697D55F08250 /* Pods-RideBooking.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RideBooking/Preview Content\"";
+				DEVELOPMENT_TEAM = U25YX7Y57L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sara.Ridechain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58FF77C7296AFD81002F3101 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19974688D18D3371FD70DA03 /* Pods-RideBooking.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RideBooking/Preview Content\"";
+				DEVELOPMENT_TEAM = U25YX7Y57L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sara.Ridechain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58FF77B2296AFD7D002F3101 /* Build configuration list for PBXProject "RideBooking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58FF77C3296AFD81002F3101 /* Debug */,
+				58FF77C4296AFD81002F3101 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58FF77C5296AFD81002F3101 /* Build configuration list for PBXNativeTarget "RideBooking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58FF77C6296AFD81002F3101 /* Debug */,
+				58FF77C7296AFD81002F3101 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58FF77AF296AFD7D002F3101 /* Project object */;
+}
