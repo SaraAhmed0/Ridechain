@@ -44,6 +44,7 @@
 		DC547B1B2948AD9D00AD95C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC547B1A2948AD9D00AD95C0 /* Assets.xcassets */; };
 		DC547B1E2948AD9D00AD95C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC547B1D2948AD9D00AD95C0 /* Preview Assets.xcassets */; };
 		DC571283296DAB6A006D1370 /* RandomId.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC571282296DAB6A006D1370 /* RandomId.swift */; };
+		DC6785C82989B44300E43AFB /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6785C72989B44300E43AFB /* Today.swift */; };
 		DC84F242295C685700379060 /* PassengerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F241295C685700379060 /* PassengerVM.swift */; };
 		DC84F244295C687600379060 /* RideVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F243295C687500379060 /* RideVM.swift */; };
 		DC84F246295C689800379060 /* TicketVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F245295C689800379060 /* TicketVM.swift */; };
@@ -84,6 +85,7 @@
 		DC547B1A2948AD9D00AD95C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC547B1D2948AD9D00AD95C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC571282296DAB6A006D1370 /* RandomId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomId.swift; sourceTree = "<group>"; };
+		DC6785C72989B44300E43AFB /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		DC84F241295C685700379060 /* PassengerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerVM.swift; sourceTree = "<group>"; };
 		DC84F243295C687500379060 /* RideVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideVM.swift; sourceTree = "<group>"; };
 		DC84F245295C689800379060 /* TicketVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVM.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				BF12872F2985B22D00913162 /* SearchView.swift */,
 				BF1287312985B22D00913162 /* TicketBookedPopupSuccessView.swift */,
 				DC84F2472965553200379060 /* TabBar.swift */,
+				DC6785C72989B44300E43AFB /* Today.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				47913451295B4E48001FA738 /* mytickets.swift in Sources */,
 				1439AA9E29645CB900ABBEC8 /* walletPage.swift in Sources */,
 				BF1287392985B22D00913162 /* TicketBookedPopupSuccessView.swift in Sources */,
+				DC6785C82989B44300E43AFB /* Today.swift in Sources */,
 				47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */,
 				1439AAA229645D1100ABBEC8 /* Wallet.swift in Sources */,
 				4791344F295B4E1C001FA738 /* ticketinitv.swift in Sources */,

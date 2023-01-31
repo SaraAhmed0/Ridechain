@@ -18,20 +18,11 @@ struct TabBar: View {
     }
     var body: some View {
         TabView {
-            ContentView()
+            Today()
                 .tabItem {
-                    Label("Menu", systemImage: "list.dash")
+                    Label("Today", systemImage: "list.dash")
                 }
-            //-----------------
-            walletPage()
-                .tabItem {
-                    Label("Wallet", systemImage: "ticket")
-                }
-            //-----------------
-//            ContentView()
-//                .tabItem {
-//                    Label("Menu", systemImage: "list.dash")
-//               }
+            
          SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
@@ -40,6 +31,10 @@ struct TabBar: View {
              .tabItem {
                     Label("Tickets", systemImage: "ticket.fill")
                }
+            walletPage()
+                .tabItem {
+                    Label("Wallet", systemImage: "ticket")
+                }
         }
     }
 }

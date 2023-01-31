@@ -14,7 +14,6 @@ struct ContentView: View {
     @EnvironmentObject var dbRide: RideVM
     @EnvironmentObject var dbTicket: TicketVM
     @EnvironmentObject var randomId: RandomIdGenerator
-    
     @State private var numOfTickets = 1
     
     var body: some View {
@@ -35,10 +34,10 @@ func makeRideCellView(_ ride:  Ride) -> some View {
         VStack{
 
             Text(ride.rideDropoff ?? "") // access to the rideDropoff attribute in ride object
-            
+
             Text("\(ride.rideCapacity ?? 0)")
             Text(ride.rideStartTime ?? Date(), style: .time)
-           
+
             HStack{
                 Stepper("\(numOfTickets)", value: $numOfTickets, in: 1...10)
                 Text("\(calculatePrice(ride, numOfTickets))")
@@ -53,9 +52,10 @@ func makeRideCellView(_ ride:  Ride) -> some View {
                     Text("Book")
                 }
             }
-          
+
         }
     
+   
     
     }
     
