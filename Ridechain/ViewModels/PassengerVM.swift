@@ -56,6 +56,18 @@ class PassengerVM: ObservableObject {
         
     }
     
+    func updateWallet(_ passenger :Passenger){
+        do{
+            if let id = Auth.auth().currentUser?.uid {
+                var _ = try dbPassenger.collection("Passengers").document(id).setData(from: passenger)
+            }
+        }
+        catch{
+            fatalError("Unable to encode task: \(error.localizedDescription)")
+        }
+        
+    }
+    
     func getEmail(_ passengers : [Passenger]) -> String {
         for passenger in passengers {
             if (passenger.id == Auth.auth().currentUser?.uid){

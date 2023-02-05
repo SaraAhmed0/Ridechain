@@ -13,6 +13,7 @@ struct SearchListView: View {
     @State var rides = [Ride]()
     @EnvironmentObject var dbTicket: TicketVM
     @EnvironmentObject var viewModel: RideViewModel
+    @EnvironmentObject var passengerVM: PassengerVM
     var pickup: String? = nil
     var dropOff: String? = nil
     var isBusSelected: Bool? = nil
@@ -79,6 +80,7 @@ struct SearchListView: View {
                         ForEach(rides){ ride in
                             SearchListCellView(ride: ride)
                                 .environmentObject(dbTicket)
+                                .environmentObject(passengerVM)
                         }
                     }
                 }
@@ -87,6 +89,7 @@ struct SearchListView: View {
             .sheet(isPresented: $showBookTicketSheet) {
                 BillSheetView()
                     .environmentObject(dbTicket)
+                    .environmentObject(passengerVM)
                     .presentationDetents([.fraction(0.7)])
                     .presentationDragIndicator(.visible)
                 

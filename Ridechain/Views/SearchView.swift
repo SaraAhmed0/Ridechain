@@ -11,13 +11,18 @@ struct SearchView: View {
     
     @StateObject var viewModel = RideViewModel()
     @EnvironmentObject var dbTicket: TicketVM
+    @EnvironmentObject var passengerVM: PassengerVM
     @State var isShowingTicketsView = false
+    @State var isShowingSearchView = false
     @State var fromTF: String = ""
     @State var toTF: String = ""
+    @State var alertTitle: String = ""
+    @State var alertMessage: String = ""
+    @State private var showingAlert = false
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             ZStack(alignment: .bottom){
                 Map(coordinateRegion: $region)
                     .edgesIgnoringSafeArea(.all)
@@ -66,18 +71,27 @@ struct SearchView: View {
                         }.padding()
                     }
                     
-                    NavigationLink {
-                        SearchListView(pickup: fromTF, dropOff: toTF)
-                            .environmentObject(viewModel)
-                            .environmentObject(dbTicket)
-                    } label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.parrotColor)
-                                .frame(height: 43)
-                            
-                            Text("Search")
-                                .foregroundColor(.white)
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color.parrotColor)
+                            .frame(height: 43)
+                        
+                        Text("Search")
+                            .foregroundColor(.white)
+                    }.alert(isPresented: $showingAlert) {
+                        Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                        
+                    }.onTapGesture {
+                        if fromTF.isEmpty {
+                            alertTitle = "No Arrival Entered"
+                            alertMessage = "Please enter your Arrival"
+                            showingAlert.toggle()
+                        } else if toTF.isEmpty {
+                            alertTitle = "No Destination Entered"
+                            alertMessage = "Please enter your destination"
+                            showingAlert.toggle()
+                        } else {
+                            isShowingSearchView.toggle()
                         }
                     }
                     
@@ -111,9 +125,7 @@ struct SearchView: View {
                         .controlSize(.large)
                         
                         NavigationLink {
-                            SearchListView(isBusSelected: false)
-                                .environmentObject(viewModel)
-                                .environmentObject(dbTicket)
+                            
                         } label: {
                             VStack(spacing: 10){
                                 Text("Metro")
@@ -135,6 +147,12 @@ struct SearchView: View {
                     
                 }.padding(.horizontal, 24)
                     .padding(.bottom, 30)
+            }
+            .navigationDestination(isPresented: $isShowingSearchView) {
+                SearchListView(isBusSelected: false)
+                    .environmentObject(viewModel)
+                    .environmentObject(dbTicket)
+                    .environmentObject(passengerVM)
             }
         }
     }

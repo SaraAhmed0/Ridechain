@@ -7,13 +7,15 @@
 
 import Foundation
 import SwiftUI
-
+import FirebaseAuth
 struct BookTicketSheetView: View {
     @EnvironmentObject var dbTicket: TicketVM
+    @EnvironmentObject var passengerVM: PassengerVM
     @Environment(\.dismiss) var dismiss
     var ride: Ride
     @State var totalPrice: Double = 0.0
     @State var totalTickets: Int = 1
+    @State var showingAlert = false
     var body: some View {
         VStack {
             HStack {
@@ -168,9 +170,23 @@ struct BookTicketSheetView: View {
                 Spacer()
                 
                 Button {
-                    dbTicket.issueTicket(ride, totalTickets, calculatePrice(ride, totalTickets), Int.random(in: 1...9999))
-                    NotificationCenter.default.post(name: Notification.didBookTicket, object: nil)
-                    dismiss()
+                    guard let id = Auth.auth().currentUser?.uid else {return}
+                    let totalPrice = calculatePrice(ride, totalTickets)
+                    let passenger = passengerVM.passengers.filter({$0.id == id}).first
+                    
+                    if let passenger, let balance = passenger.walletBalance, balance >= totalPrice {
+                        var updatedPassenger = passenger
+                        updatedPassenger.walletBalance! -= totalPrice
+                        passengerVM.updateWallet(updatedPassenger)
+                        
+                        dbTicket.issueTicket(ride, totalTickets, calculatePrice(ride, totalTickets), Int.random(in: 1...9999))
+                        NotificationCenter.default.post(name: Notification.didBookTicket, object: nil)
+                        dismiss()
+                    } else {
+                        showingAlert.toggle()
+                    }
+                    
+                    
                 } label: {
                     ZStack {
                         
@@ -183,6 +199,8 @@ struct BookTicketSheetView: View {
                         Text("Total : \(totalPrice.getIn2Decimal()) SAR")
                             .font(.custom("Roboto Medium", size: 20))
                             .foregroundColor(Color.white)
+                    }.alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Insufficient Wallet"), message: Text("Wallet balance not enough please charge the wallet"), dismissButton: .default(Text("Ok")))
                     }
                 }
                 

@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchListCellView: View {
     @State var presentSheet = false
     @EnvironmentObject var dbTicket: TicketVM
+    @EnvironmentObject var passengerVM: PassengerVM
     var ride: Ride
     var body: some View {
         //Rectangle 9
@@ -59,6 +60,7 @@ struct SearchListCellView: View {
         .sheet(isPresented: $presentSheet) {
             BookTicketSheetView(ride: ride)
                 .environmentObject(dbTicket)
+                .environmentObject(passengerVM)
                 .presentationDetents([.fraction(0.5)])
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.visible)
