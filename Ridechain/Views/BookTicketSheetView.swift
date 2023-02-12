@@ -11,6 +11,8 @@ import FirebaseAuth
 struct BookTicketSheetView: View {
     @EnvironmentObject var dbTicket: TicketVM
     @EnvironmentObject var passengerVM: PassengerVM
+    @EnvironmentObject var dbRide: RideVM
+    @EnvironmentObject var randomId: RandomIdGenerator
     @Environment(\.dismiss) var dismiss
     var ride: Ride
     @State var totalPrice: Double = 0.0
@@ -170,6 +172,7 @@ struct BookTicketSheetView: View {
                 Spacer()
                 
                 Button {
+                    
                     guard let id = Auth.auth().currentUser?.uid else {return}
                     let totalPrice = calculatePrice(ride, totalTickets)
                     let passenger = passengerVM.passengers.filter({$0.id == id}).first
@@ -178,8 +181,12 @@ struct BookTicketSheetView: View {
                         var updatedPassenger = passenger
                         updatedPassenger.walletBalance! -= totalPrice
                         passengerVM.updateWallet(updatedPassenger)
+                        updatedPassenger.walletTokens! += 5
+                        passengerVM.updateToken(updatedPassenger)
                         
-                        dbTicket.issueTicket(ride, totalTickets, calculatePrice(ride, totalTickets), Int.random(in: 1...9999))
+                        dbTicket.issueTicket(ride, totalTickets, calculatePrice(ride, totalTickets), randomId.randomIds[0].number)
+                        randomId.incrementCounter()
+                        
                         NotificationCenter.default.post(name: Notification.didBookTicket, object: nil)
                         dismiss()
                     } else {

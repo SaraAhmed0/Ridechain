@@ -25,6 +25,7 @@ struct Wallet: View {
 }
 
 struct walletbalance: View {
+    @EnvironmentObject var dbPassenger: PassengerVM
     @State var balance = 0
     @State var points = 0
     var body: some View{
@@ -38,7 +39,7 @@ struct walletbalance: View {
                 .offset(x:15)
                 .padding(0.1)
             HStack{
-                Text(String(balance)+" SAR ")
+                Text(String(dbPassenger.getBalance(dbPassenger.passengers))+" SAR ")
                     .font(.system(size: 25))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -59,7 +60,7 @@ struct walletbalance: View {
                 .offset(x:36)
                 .padding(0.1)
             HStack{
-                Text(String(points)+" Points")
+                Text(String(dbPassenger.getTokens(dbPassenger.passengers))+" Points")
                     .font(.system(size: 25))
                     .fontWeight(.bold)
                     .foregroundColor(.white)

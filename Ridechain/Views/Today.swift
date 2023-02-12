@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct Today: View {
+    @State var showBookTicketSheet = false
+    @State var showTicketPopupView = false
     @EnvironmentObject var dbRide: RideVM
     @EnvironmentObject var dbTicket: TicketVM
+    @EnvironmentObject var dbPassenger: PassengerVM
     @State var presentSheet = false
     
     var body: some View {
@@ -65,9 +68,30 @@ struct Today: View {
                     ForEach(dbRide.rides, content: makeRideCell)
                 }
                 
+            }.sheet(isPresented: $showBookTicketSheet) {
+                BillSheetView()
+                    .environmentObject(dbTicket)
+                    .environmentObject(dbPassenger)
+                    .presentationDetents([.fraction(0.7)])
+                    .presentationDragIndicator(.visible)
+                
+            }
+            if showTicketPopupView{
+                TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView)
             }
         }
-    }
+        .onAppear(){
+            NotificationCenter.default.addObserver(forName: Notification.didBookTicket, object: nil, queue: .main) { (_) in
+                
+                showTicketPopupView.toggle()
+            }
+            NotificationCenter.default.addObserver(forName: Notification.viewTicket, object: nil, queue: .main) { (_) in
+                
+                showBookTicketSheet.toggle()
+            }
+        }
+        }
+
     
     func makeRideCell (_ ride : Ride) -> some View {
         ZStack {

@@ -11,7 +11,6 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class Ride: Codable, Identifiable{
-    
     @DocumentID var id : String?
     var rideStartTime: Date?
     var rideDate: Date?
@@ -34,4 +33,11 @@ class Ride: Codable, Identifiable{
         self.rideDropoff = rideDropoff
         self.rideDuration = rideDuration
     }
+}
+
+func decrementCapacity( _ ride :Ride, _ newCapacity :Int){
+    var capacity = ride.rideCapacity ?? 0 - newCapacity
+    
+    
+    
 }

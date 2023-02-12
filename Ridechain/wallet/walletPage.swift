@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Foundation
-
+import FirebaseAuth
 struct walletPage: View {
     @EnvironmentObject var dbPassenger: PassengerVM
     @State var email = "email@gmail.com"
@@ -40,7 +40,7 @@ struct walletPage: View {
                         }
                         
                         HStack{
-                            NavigationLink(destination: charge()){
+                            NavigationLink(destination: cardList()){
                                 Text("Charge wallet")
                                     .font(.caption)
                                     .fontWeight(.bold)
@@ -80,30 +80,43 @@ struct walletPage: View {
                                 .offset(y:-10)
                         }
                         
-                        HStack{
-                            Text(String(dbPassenger.getEmail(dbPassenger.passengers)))
-                                .frame(width: 350,height: 50, alignment: .leading)
-                                .background(Color(.white))
-                                .cornerRadius(8)
-                                .offset(y: -20)
-                            
-                        }
+//                        List{
+                        NavigationLink(destination: accountInfo(passenger: Passenger(passengerNationalID: "",passengerEmail: dbPassenger.getEmail(dbPassenger.passengers), passengerName: dbPassenger.getUserName(dbPassenger.passengers)))){
+                            ZStack{
+                                
+                                    Rectangle().frame(width: 350, height: 40).foregroundColor(.white)
+                                HStack{
+                                    Text("My Information").multilineTextAlignment(.leading).padding()
+                                    
+                                    Image(systemName: "chevron.right").padding()
+                                }
+                            }
+                        }.padding(.bottom)
+//                        }
+//                        HStack{
+//                            Text(String(dbPassenger.getEmail(dbPassenger.passengers)))
+//                                .frame(width: 350,height: 50, alignment: .leading)
+//                                .background(Color(.white))
+//                                .cornerRadius(8)
+//                                .offset(y: -20)
+//
+//                        }
                         
-                        HStack{
-                            Button(action: {
-                                ViewModel.signOut()
-                            }, label: {
-                                Text("sign Out")
-                                    .foregroundColor(Color.white)
-                                    .frame(width: 350,height: 50)
-                                    .background(Color(.red))
-                                    .cornerRadius(8)
-                                    .offset(y:-20)
-                                
-                                
-                                
-                            })
-                        }
+//                        HStack{
+//                            Button(action: {
+//                                ViewModel.signOut()
+//                            }, label: {
+//                                Text("sign Out")
+//                                    .foregroundColor(Color.white)
+//                                    .frame(width: 350,height: 50)
+//                                    .background(Color(.red))
+//                                    .cornerRadius(8)
+//                                    .offset(y:-20)
+//
+//
+//
+//                            })
+//                        }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(Color(red:237/255, green: 246/255, blue: 249/255))
                         .ignoresSafeArea()
@@ -116,8 +129,61 @@ struct walletPage: View {
 }
 
 
+struct Payments : Hashable {
+    var paymentType: String
+    var paymentImage: String
+  
+}
+
+struct accountInfo : View{
+    var passenger : Passenger
+    @EnvironmentObject var ViewModel: authViewModel
+    var body: some View {
+        VStack{
+            List{
+                Text(passenger.passengerName ?? "")
+                Text(passenger.passengerEmail ?? "")
+            }
+            Button(action: {
+                ViewModel.signOut()
+            }, label: {
+                Text("sign Out")
+                    .foregroundColor(Color.white)
+                    .frame(width: 350,height: 50)
+                    .background(Color(.red))
+                    .cornerRadius(8)
+                    .offset(y:-20)
+                
+                
+                
+            })
+            
+        }
+        
+    }
+}
+
+
+struct cardList : View{
+    var cards = [Payments(paymentType: "Credit or Debit Card", paymentImage: ""),Payments(paymentType: "Apple Pay", paymentImage: "")]
+    var body: some View {
+        List{
+            ForEach(self.cards, id: \.self) { item in
+                NavigationLink(destination: charge()){
+                        
+                        Text(item.paymentType)
+                }
+            }
+            
+        }
+        
+    }
+}
+
 struct charge: View {
     @State var amount: String = ""
+    @EnvironmentObject var dbPassenger: PassengerVM
+    @State var showingAlert = false
     var body: some View {
         VStack{
             Text("How much do you want to charge?")
@@ -131,9 +197,10 @@ struct charge: View {
             
             KeyPad(string: $amount)
             
-            Button(action: {
-               
-            }, label: {
+            Button{
+                dbPassenger.updateWallet(dbPassenger.passengers, Double(amount) ?? 0.0)
+                showingAlert.toggle()
+            } label: {
                 Text("Charge")
                     .foregroundColor(Color.white)
                     .frame(width: 350,height: 50)
@@ -142,7 +209,9 @@ struct charge: View {
                     .padding()
                 
                 
-            })
+            }.alert(isPresented: $showingAlert) {
+                Alert(title: Text("Wallet Charged"), message: Text("Wallet was charged successfully"), dismissButton: .default(Text("Ok")))
+            }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(red:237/255, green: 246/255, blue: 249/255))

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BillSheetView: View {
     @EnvironmentObject var dbTicket: TicketVM
+    @EnvironmentObject var dbPassenger: PassengerVM
+    
     @State var presentSheet = false
     var body: some View {
         
@@ -33,7 +35,7 @@ struct BillSheetView: View {
                             
                         })
                         
-                        Text("")
+                        Text(String(dbPassenger.getUserName(dbPassenger.passengers)))
                             .scaledFont(name: .bold, size: 32)
                         
                         Text("Show this ticket at the enterance")

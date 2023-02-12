@@ -56,10 +56,36 @@ class PassengerVM: ObservableObject {
         
     }
     
+    func updateToken(_ passenger :Passenger){
+        do{
+            if let id = Auth.auth().currentUser?.uid {
+                var _ = try dbPassenger.collection("Passengers").document(id).setData(from: passenger)
+            }
+        }
+        catch{
+            fatalError("Unable to encode task: \(error.localizedDescription)")
+        }
+        
+    }
+    
     func updateWallet(_ passenger :Passenger){
         do{
             if let id = Auth.auth().currentUser?.uid {
                 var _ = try dbPassenger.collection("Passengers").document(id).setData(from: passenger)
+            }
+        }
+        catch{
+            fatalError("Unable to encode task: \(error.localizedDescription)")
+        }
+        
+    }
+    
+    func updateWallet(_ passengers : [Passenger], _ newBalance :Double ){
+        do{
+            for passenger in passengers {
+                if (passenger.id == Auth.auth().currentUser?.uid) {
+                    var _ = try dbPassenger.collection("Passengers").document(passenger.id ?? "").setData(from: ["walletBalance" : (passenger.walletBalance ?? 0) + newBalance],merge: true)
+                }
             }
         }
         catch{
@@ -75,6 +101,32 @@ class PassengerVM: ObservableObject {
             }
         }
         return "NA"
+    }
+    
+    func getUserName(_ passengers : [Passenger]) -> String {
+        for passenger in passengers {
+            if (passenger.id == Auth.auth().currentUser?.uid){
+                return passenger.passengerName ?? ""
+            }
+        }
+        return "NA"
+    }
+    func getBalance(_ passengers : [Passenger]) -> Double {
+        for passenger in passengers {
+            if (passenger.id == Auth.auth().currentUser?.uid){
+                return passenger.walletBalance ?? 0.0
+            }
+        }
+        return 0.0
+    }
+    
+    func getTokens(_ passengers : [Passenger]) -> Int {
+        for passenger in passengers {
+            if (passenger.id == Auth.auth().currentUser?.uid){
+                return passenger.walletTokens ?? 0
+            }
+        }
+        return 0
     }
     
     
