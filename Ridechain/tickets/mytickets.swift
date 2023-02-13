@@ -188,7 +188,7 @@ struct mytickets: View {
                 Text("valid").foregroundColor(.white)
             }
             Spacer()
-            Text("Sara Ahmed").font(.custom("Roboto-Medium",size:32)).fontWeight(.bold)
+            Text(eticket.ticketOwner ?? "").font(.custom("Roboto-Medium",size:32)).fontWeight(.bold)
             
             Text("Show this ticket at the entrance").font(.custom("Roboto-Medium",size:16)).fontWeight(.regular).foregroundColor(.gray)
             Divider()
