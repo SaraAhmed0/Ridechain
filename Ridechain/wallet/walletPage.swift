@@ -312,7 +312,7 @@ struct ticketHistory: View {
         VStack{
             Text("Tickets").font(.custom("Roboto-Medium",size:44)).padding(.trailing, 200.0)
             Divider()
-            Text("Coming Tickets").font(.custom("Roboto-Medium",size:20)).padding(.trailing, 200.0)
+            Text("Passed Tickets").font(.custom("Roboto-Medium",size:20)).padding(.trailing, 200.0)
             ScrollView {
                 
                 ForEach( dbTicket.tickets,id:\.id)

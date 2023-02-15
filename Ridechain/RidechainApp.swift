@@ -25,16 +25,28 @@ struct RidechainApp: App {
         dbRide = RideVM()
         dbTicket = TicketVM()
         randomId = RandomIdGenerator()
-      
+        UITabBar.appearance().backgroundColor = UIColor(.white)
     }
     var body: some Scene {
         WindowGroup {
-            SignViews()
+            splashscreen()
                 .environmentObject(viewModel)
                 .environmentObject(dbPassenger)
                 .environmentObject(dbRide)
                 .environmentObject(dbTicket)
                 .environmentObject(randomId)
+//            ContentView()
+//                .environmentObject(dbRide)
+//                .environmentObject(randomId)
+//            tabbarSP()
+//                .environmentObject(dbRide)
+//                .environmentObject(dbTicket)
+//            SignViews()
+//                .environmentObject(viewModel)
+//                .environmentObject(dbPassenger)
+//                .environmentObject(dbRide)
+//                .environmentObject(dbTicket)
+//                .environmentObject(randomId)
 
             
         }

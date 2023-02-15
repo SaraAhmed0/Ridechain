@@ -30,11 +30,11 @@ class TicketVM: ObservableObject {
                     self.tickets = querySnapshot.documents.compactMap { document in
                         do{
                             let ticket =  try document.data(as: Ticket.self)
-//                            if (x.ticketOwner == Auth.auth().currentUser?.uid){
+                            if (ticket.ticketOwner == Auth.auth().currentUser?.uid){
                             print(ticket.dropoff)
                                 return ticket
                                 
-//                            }
+                            }
                         }
                         catch {
                             print(error)

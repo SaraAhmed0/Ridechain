@@ -19,14 +19,41 @@ class Passenger: Codable, Identifiable{
     var passengerName: String?
     var walletBalance: Double?
     var walletTokens: Int?
+    var spLocation: String?
+    var userType: String?
 
     
-    init(passengerNationalID:String? = "", passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", walletBalance: Double? = 0.0, walletTokens: Int? = 0  ) {
+    init(passengerNationalID:String? = "", passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", walletBalance: Double? = 0.0, walletTokens: Int? = 0 , userType: String? = "P" ) {
         self.passengerNationalID = passengerNationalID
         self.passengerEmail = passengerEmail
         self.passengerPassword = passengerPassword
         self.passengerName = passengerName
         self.walletBalance = walletBalance
         self.walletTokens = walletTokens
+        self.userType = userType
     }
+    
+    init(passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", spLocation: String? = "" , userType: String? = "S") {
+
+        self.passengerEmail = passengerEmail
+        self.passengerPassword = passengerPassword
+        self.passengerName = passengerName
+        self.spLocation = spLocation
+        self.userType = userType
+     
+    }
+    
+    func user(id: String, users: [Passenger]) -> Passenger{
+      var user : Passenger = Passenger()
+        var userType = ""
+        for i in users{
+          if i.id == id {
+            user = i
+            print("id: "+id)
+            userType = user.userType ?? ""
+          }
+        }
+        print("usertype is: "+userType)
+        return user
+      }
 }

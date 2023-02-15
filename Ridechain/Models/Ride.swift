@@ -33,11 +33,27 @@ class Ride: Codable, Identifiable{
         self.rideDropoff = rideDropoff
         self.rideDuration = rideDuration
     }
+    
+    func calculateDuration(_ startTime : Date, duration: Int) -> Date {
+        
+        // convert Date to TimeInterval (typealias for Double)
+        let timeInterval = startTime.timeIntervalSince1970
+
+        // convert to Integer
+        let timeInt = Int(timeInterval)
+        let newduration = duration * 60
+        let endTime = newduration + timeInt
+        
+        let endTimeFormat = TimeInterval(endTime)
+
+        // create NSDate from Double (NSTimeInterval)
+        let myNSDate = Date(timeIntervalSince1970: endTimeFormat)
+        print(duration)
+        print(myNSDate)
+        return myNSDate
+        
+    }
+
 }
 
-func decrementCapacity( _ ride :Ride, _ newCapacity :Int){
-    var capacity = ride.rideCapacity ?? 0 - newCapacity
-    
-    
-    
-}
+

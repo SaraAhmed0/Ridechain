@@ -72,13 +72,13 @@ struct BookTicketSheetView: View {
                                 .foregroundColor(.lightGreen)
                             
                             
-                            Text(ride.rideDate?.getFormatted() ?? "")
+                            Text(ride.rideDate ?? Date(), style: .date)
                                 .scaledFont(name: .medium, size: 16)
                         }
                     }
                     
                     HStack(alignment: .firstTextBaseline) {
-                        Image(systemName: "calendar")
+                        Image(systemName: ride.rideType == "Metro" ? "tram.fill" : "bus.fill")
                             .foregroundColor(.lightGreen)
                         
                         
@@ -94,7 +94,7 @@ struct BookTicketSheetView: View {
                     }
                     
                     HStack(alignment: .firstTextBaseline) {
-                        Image(systemName: "calendar")
+                        Image(systemName: "person.3")
                             .foregroundColor(.lightGreen)
                         
                         
@@ -110,7 +110,7 @@ struct BookTicketSheetView: View {
                     }
                     
                     HStack(alignment: .firstTextBaseline) {
-                        Image(systemName: "calendar")
+                        Image(systemName: "ticket")
                             .foregroundColor(.lightGreen)
                         
                         

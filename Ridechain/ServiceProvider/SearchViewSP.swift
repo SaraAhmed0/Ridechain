@@ -7,11 +7,11 @@
 
 import SwiftUI
 import MapKit
-struct SearchView: View {
+struct SearchViewSP: View {
     
-    @StateObject var viewModel = RideViewModel()
-    @EnvironmentObject var dbTicket: TicketVM
-    @EnvironmentObject var passengerVM: PassengerVM
+//    @StateObject var viewModel = RideViewModel()
+    @EnvironmentObject var dbRide: RideVM
+//    @EnvironmentObject var passengerVM: PassengerVM
     @State var isShowingTicketsView = false
     @State var isShowingSearchView = false
     @State var fromTF: String = ""
@@ -82,13 +82,9 @@ struct SearchView: View {
                         Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                         
                     }.onTapGesture {
-                        if fromTF.isEmpty {
-                            alertTitle = "No Arrival Entered"
-                            alertMessage = "Please enter your Arrival"
-                            showingAlert.toggle()
-                        } else if toTF.isEmpty {
-                            alertTitle = "No Destination Entered"
-                            alertMessage = "Please enter your destination"
+                        if fromTF.isEmpty || toTF.isEmpty {
+                            alertTitle = "Missing Information"
+                            alertMessage = "Please enter your destenation"
                             showingAlert.toggle()
                         } else {
                             isShowingSearchView.toggle()
@@ -103,10 +99,13 @@ struct SearchView: View {
                     
                     HStack{
                         //Bus
+                        
                         NavigationLink {
-                            SearchListView(isBusSelected: true, fromTF: $fromTF, toTF: $toTF)
-                                .environmentObject(viewModel)
-                                .environmentObject(dbTicket)
+                            ForEach(dbRide.rides.indices, id: \.self){ index in
+                                if  dbRide.rides[index].rideType == "Bus"{
+                                    sprideinitv(ride : dbRide.rides[index])
+                                }
+                            }
                         } label: {
                             VStack(spacing: 10){
                                 Text("Bus")
@@ -125,7 +124,11 @@ struct SearchView: View {
                         .controlSize(.large)
                         
                         NavigationLink {
-                            
+                            ForEach(dbRide.rides.indices, id: \.self){ index in
+                                if  dbRide.rides[index].rideType == "Metro"{
+                                    sprideinitv(ride : dbRide.rides[index])
+                                }
+                            }
                         } label: {
                             VStack(spacing: 10){
                                 Text("Metro")
@@ -149,18 +152,21 @@ struct SearchView: View {
                     .padding(.bottom, 30)
             }
             .navigationDestination(isPresented: $isShowingSearchView) {
-                SearchListView(isBusSelected: false, fromTF: $fromTF, toTF: $toTF)
-                    .environmentObject(viewModel)
-                    .environmentObject(dbTicket)
-                    .environmentObject(passengerVM)
+                ForEach(dbRide.rides.indices, id: \.self){ index in
+                    if  (fromTF.range(of: dbRide.rides[index].ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: dbRide.rides[index].rideDropoff ?? "", options: .caseInsensitive) != nil){
+
+                        sprideinitv(ride : dbRide.rides[index])
+                    }
+                }
+
             }
         }
     }
     
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

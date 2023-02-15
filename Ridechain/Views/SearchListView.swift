@@ -17,6 +17,8 @@ struct SearchListView: View {
     var pickup: String? = nil
     var dropOff: String? = nil
     var isBusSelected: Bool? = nil
+    @Binding var fromTF: String
+    @Binding var toTF: String
     
     var body: some View {
         ZStack{
@@ -78,9 +80,11 @@ struct SearchListView: View {
                         }
                     }else{
                         ForEach(rides){ ride in
-                            SearchListCellView(ride: ride)
-                                .environmentObject(dbTicket)
-                                .environmentObject(passengerVM)
+                            if  (fromTF.range(of: ride.ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: ride.rideDropoff ?? "", options: .caseInsensitive) != nil) {
+                                SearchListCellView(ride: ride)
+                                    .environmentObject(dbTicket)
+                                    .environmentObject(passengerVM)
+                            }
                         }
                     }
                 }
@@ -119,8 +123,8 @@ struct SearchListView: View {
     }
 }
 
-struct SearchListView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchListView()
-    }
-}
+//struct SearchListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchListView()
+//    }
+//}

@@ -31,7 +31,7 @@ struct SearchListCellView: View {
                     Image("dottedLine")
                         .offset(y: 4)
                     
-                    Image(systemName: ride.rideType == "Bus" ? "bus" : "tram")
+                    Image(systemName: ride.rideType == "Bus" ? "bus.fill" : "tram.fill")
                         .foregroundColor(.lightGreen)
                     
                     Image("dottedLineRight")

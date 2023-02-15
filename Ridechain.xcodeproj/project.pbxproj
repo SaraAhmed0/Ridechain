@@ -49,6 +49,18 @@
 		DC84F244295C687600379060 /* RideVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F243295C687500379060 /* RideVM.swift */; };
 		DC84F246295C689800379060 /* TicketVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F245295C689800379060 /* TicketVM.swift */; };
 		DC84F2482965553200379060 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84F2472965553200379060 /* TabBar.swift */; };
+		DC8C5E45299AA55400F12B03 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E44299AA55400F12B03 /* ServiceProvider.swift */; };
+		DC8C5E47299AA60500F12B03 /* ServiceProviderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E46299AA60500F12B03 /* ServiceProviderVM.swift */; };
+		DC8C5E4A299AA76C00F12B03 /* sprideinitv.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E49299AA76C00F12B03 /* sprideinitv.swift */; };
+		DC8C5E4C299AA79400F12B03 /* ridesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E4B299AA79400F12B03 /* ridesheet.swift */; };
+		DC8C5E4E299AA7C700F12B03 /* tabbarSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E4D299AA7C700F12B03 /* tabbarSP.swift */; };
+		DC8C5E50299AA7EF00F12B03 /* sprides.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E4F299AA7EF00F12B03 /* sprides.swift */; };
+		DC8C5E52299AA80D00F12B03 /* addRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E51299AA80D00F12B03 /* addRide.swift */; };
+		DC8C5E55299AAA1300F12B03 /* SignViewsSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E54299AAA1300F12B03 /* SignViewsSP.swift */; };
+		DC8C5E57299AB5CD00F12B03 /* editSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E56299AB5CD00F12B03 /* editSheet.swift */; };
+		DC8C5E5A299C2DD300F12B03 /* splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E59299C2DD300F12B03 /* splashscreen.swift */; };
+		DC8C5E5C299C2E3A00F12B03 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E5B299C2E3A00F12B03 /* UserType.swift */; };
+		DC8C5E5E299CD9F100F12B03 /* SearchViewSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E5D299CD9F100F12B03 /* SearchViewSP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +102,18 @@
 		DC84F243295C687500379060 /* RideVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideVM.swift; sourceTree = "<group>"; };
 		DC84F245295C689800379060 /* TicketVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVM.swift; sourceTree = "<group>"; };
 		DC84F2472965553200379060 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		DC8C5E44299AA55400F12B03 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		DC8C5E46299AA60500F12B03 /* ServiceProviderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderVM.swift; sourceTree = "<group>"; };
+		DC8C5E49299AA76C00F12B03 /* sprideinitv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sprideinitv.swift; sourceTree = "<group>"; };
+		DC8C5E4B299AA79400F12B03 /* ridesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ridesheet.swift; sourceTree = "<group>"; };
+		DC8C5E4D299AA7C700F12B03 /* tabbarSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbarSP.swift; sourceTree = "<group>"; };
+		DC8C5E4F299AA7EF00F12B03 /* sprides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sprides.swift; sourceTree = "<group>"; };
+		DC8C5E51299AA80D00F12B03 /* addRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRide.swift; sourceTree = "<group>"; };
+		DC8C5E54299AAA1300F12B03 /* SignViewsSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewsSP.swift; sourceTree = "<group>"; };
+		DC8C5E56299AB5CD00F12B03 /* editSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editSheet.swift; sourceTree = "<group>"; };
+		DC8C5E59299C2DD300F12B03 /* splashscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashscreen.swift; sourceTree = "<group>"; };
+		DC8C5E5B299C2E3A00F12B03 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		DC8C5E5D299CD9F100F12B03 /* SearchViewSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewSP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +160,7 @@
 				DC539E152951221D004A9760 /* Passenger.swift */,
 				DC539E1729512226004A9760 /* Ride.swift */,
 				DC539E1929512230004A9760 /* Ticket.swift */,
+				DC8C5E44299AA55400F12B03 /* ServiceProvider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +175,7 @@
 				DC84F243295C687500379060 /* RideVM.swift */,
 				DC84F245295C689800379060 /* TicketVM.swift */,
 				DC571282296DAB6A006D1370 /* RandomId.swift */,
+				DC8C5E46299AA60500F12B03 /* ServiceProviderVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -191,6 +217,8 @@
 		DC547B152948AD9C00AD95C0 /* Ridechain */ = {
 			isa = PBXGroup;
 			children = (
+				DC8C5E58299C2DBE00F12B03 /* SplashViews */,
+				DC8C5E48299AA72F00F12B03 /* ServiceProvider */,
 				BF12872B2985B22D00913162 /* ColorExt.swift */,
 				BF12872E2985B22D00913162 /* FontExt.swift */,
 				1439AA9C29645C9F00ABBEC8 /* wallet */,
@@ -214,6 +242,38 @@
 				DC547B1D2948AD9D00AD95C0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC8C5E48299AA72F00F12B03 /* ServiceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DC8C5E53299AA9EA00F12B03 /* signViews */,
+				DC8C5E49299AA76C00F12B03 /* sprideinitv.swift */,
+				DC8C5E4B299AA79400F12B03 /* ridesheet.swift */,
+				DC8C5E4D299AA7C700F12B03 /* tabbarSP.swift */,
+				DC8C5E4F299AA7EF00F12B03 /* sprides.swift */,
+				DC8C5E51299AA80D00F12B03 /* addRide.swift */,
+				DC8C5E56299AB5CD00F12B03 /* editSheet.swift */,
+				DC8C5E5D299CD9F100F12B03 /* SearchViewSP.swift */,
+			);
+			path = ServiceProvider;
+			sourceTree = "<group>";
+		};
+		DC8C5E53299AA9EA00F12B03 /* signViews */ = {
+			isa = PBXGroup;
+			children = (
+				DC8C5E54299AAA1300F12B03 /* SignViewsSP.swift */,
+			);
+			path = signViews;
+			sourceTree = "<group>";
+		};
+		DC8C5E58299C2DBE00F12B03 /* SplashViews */ = {
+			isa = PBXGroup;
+			children = (
+				DC8C5E59299C2DD300F12B03 /* splashscreen.swift */,
+				DC8C5E5B299C2E3A00F12B03 /* UserType.swift */,
+			);
+			path = SplashViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +361,7 @@
 			files = (
 				BF1287342985B22D00913162 /* SearchListCellView.swift in Sources */,
 				DC84F246295C689800379060 /* TicketVM.swift in Sources */,
+				DC8C5E50299AA7EF00F12B03 /* sprides.swift in Sources */,
 				DC84F244295C687600379060 /* RideVM.swift in Sources */,
 				DC539E1229511E84004A9760 /* authViewModel.swift in Sources */,
 				47913451295B4E48001FA738 /* mytickets.swift in Sources */,
@@ -308,15 +369,22 @@
 				BF1287392985B22D00913162 /* TicketBookedPopupSuccessView.swift in Sources */,
 				DC6785C82989B44300E43AFB /* Today.swift in Sources */,
 				47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */,
+				DC8C5E45299AA55400F12B03 /* ServiceProvider.swift in Sources */,
 				1439AAA229645D1100ABBEC8 /* Wallet.swift in Sources */,
+				DC8C5E5C299C2E3A00F12B03 /* UserType.swift in Sources */,
+				DC8C5E4A299AA76C00F12B03 /* sprideinitv.swift in Sources */,
 				4791344F295B4E1C001FA738 /* ticketinitv.swift in Sources */,
+				DC8C5E52299AA80D00F12B03 /* addRide.swift in Sources */,
 				DC539E162951221D004A9760 /* Passenger.swift in Sources */,
 				BF1287352985B22D00913162 /* BookTicketSheetView.swift in Sources */,
+				DC8C5E4E299AA7C700F12B03 /* tabbarSP.swift in Sources */,
 				DC84F242295C685700379060 /* PassengerVM.swift in Sources */,
 				BF12873D2985B2EB00913162 /* RideViewModel.swift in Sources */,
 				BF1287382985B22D00913162 /* SearchListView.swift in Sources */,
 				1439AAA029645CE600ABBEC8 /* walletActivity.swift in Sources */,
+				DC8C5E4C299AA79400F12B03 /* ridesheet.swift in Sources */,
 				47913449295B4BEB001FA738 /* tickettest.swift in Sources */,
+				DC8C5E5E299CD9F100F12B03 /* SearchViewSP.swift in Sources */,
 				BF12873C2985B2EB00913162 /* TicketViewModel.swift in Sources */,
 				DC547B192948AD9C00AD95C0 /* ContentView.swift in Sources */,
 				BF1287322985B22D00913162 /* BillSheetView.swift in Sources */,
@@ -325,11 +393,15 @@
 				BF1287362985B22D00913162 /* FontExt.swift in Sources */,
 				BF1287372985B22D00913162 /* SearchView.swift in Sources */,
 				DC539E1A29512230004A9760 /* Ticket.swift in Sources */,
+				DC8C5E5A299C2DD300F12B03 /* splashscreen.swift in Sources */,
 				BF1287332985B22D00913162 /* ColorExt.swift in Sources */,
 				4791344B295B4C5C001FA738 /* ticketv.swift in Sources */,
 				4791344D295B4CD7001FA738 /* linestruct.swift in Sources */,
 				DC539E1D2951CCBF004A9760 /* SignViews.swift in Sources */,
+				DC8C5E47299AA60500F12B03 /* ServiceProviderVM.swift in Sources */,
 				DC539E1829512226004A9760 /* Ride.swift in Sources */,
+				DC8C5E57299AB5CD00F12B03 /* editSheet.swift in Sources */,
+				DC8C5E55299AAA1300F12B03 /* SignViewsSP.swift in Sources */,
 				DC84F2482965553200379060 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

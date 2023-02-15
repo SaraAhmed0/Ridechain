@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignViews: View {
+struct SignViewsSP: View {
     @EnvironmentObject var viewModel: authViewModel
 
     var body: some View {
@@ -18,21 +18,10 @@ struct SignViews: View {
                 VStack{
 //                    TabBar()
                     
-//                    Button(action: {
-//                        viewModel.signOut()
-//                    }, label: {
-//                        Text("sign Out")
-//                            .foregroundColor(Color.white)
-//                            .frame(width: 350,height: 50)
-//                            .background(Color(red:96/255 ,green:190/255 ,blue:143/255 ))
-//                            .cornerRadius(8)
-//                            .padding( )
-//
-//                    })
                 }
             }
             else{
-                sign()
+                signInView()
             }
             
            
@@ -46,44 +35,7 @@ struct SignViews: View {
     }
 }
 
-struct sign: View{
-    var body: some View{
-        NavigationView{
-            VStack{
-                VStack{
-                    Text("Welcome to Ridechain")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(red:0/255, green: 109/255, blue: 119/255))
-                    //                    .padding()
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 300,height: 300,alignment: .center)
-                    //                    .padding(-100)
-                    //                Spacer()
-                }.padding()
-                //            Spacer()
-                NavigationLink(destination:signInView()) {
-                    Text("Sign In")
-                        .foregroundColor(Color.white)
-                        .frame(width: 350,height: 50)
-                        .background(Color(red:96/255 ,green:190/255 ,blue:143/255 ))
-                        .cornerRadius(8)
-                }
-                NavigationLink (destination:UserType()){
-                    Text("Sign Up")
-                        .foregroundColor(Color.white)
-                        .frame(width: 350,height: 50)
-                        .background(Color(red:96/255 ,green:190/255 ,blue:143/255 ))
-                        .cornerRadius(8)
-                }
-                
-            }
-        }
-    }
-}
-
-struct signInView: View {
+struct signInViewSP: View {
     @State var email = ""
     @State var password = ""
     
@@ -123,7 +75,7 @@ struct signInView: View {
                     .autocapitalization(.none )
                     .padding()
                     .background(Color(.white))
-                
+             
                 
                 
                 Spacer()
@@ -140,6 +92,8 @@ struct signInView: View {
                         .background(Color(red:96/255 ,green:190/255 ,blue:143/255 ))
                         .cornerRadius(8)
                 })
+                NavigationLink("create account", destination: signUpView())
+                    .padding()
             }.padding()
             Spacer()
             Spacer()
@@ -153,10 +107,10 @@ struct signInView: View {
     
 }
 
-struct signUpView: View {
+struct signUpViewSP: View {
     @State var email = ""
     @State var password = ""
-    @State var NationalID = ""
+    @State var city = ""
     @State var Name = ""
     
     @EnvironmentObject var viewModel: authViewModel
@@ -169,13 +123,13 @@ struct signUpView: View {
             
             VStack{
                 
-                Text("National ID")
+                Text("City")
                     .font(.system(size: 20).bold())
                     .foregroundColor(Color(red:0/255 ,green:168/255 ,blue:184/255 ))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.all)
                 
-                TextField("**********", text: $NationalID)
+                TextField("Riyadh", text: $city)
                     .disableAutocorrection(true)
                     .autocapitalization(.none )
                     .padding()
@@ -187,7 +141,7 @@ struct signUpView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.all)
                 
-                TextField("Sara Ahmed", text: $Name)
+                TextField("Riyadh Bus", text: $Name)
                     .disableAutocorrection(true)
                     .autocapitalization(.none )
                     .padding()
@@ -227,7 +181,8 @@ struct signUpView: View {
                     guard !email.isEmpty, !password.isEmpty else {
                         return
                     }
-                    viewModel.signUp(nationalID: NationalID, name: Name, email: email, password: password)
+                    viewModel.signUpSP(city: city, name: Name, email: email,
+                                       password: password)
                     
                 }, label: {
                     Text("sign Up")
@@ -251,8 +206,8 @@ struct signUpView: View {
 }
 
 
-struct SignViews_Previews: PreviewProvider {
+struct SignViewsSP_Previews: PreviewProvider {
     static var previews: some View {
-        SignViews()
+        SignViewsSP()
     }
 }

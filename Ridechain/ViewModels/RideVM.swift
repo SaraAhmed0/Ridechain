@@ -48,6 +48,16 @@ class RideVM: ObservableObject {
         
     }
     
+    func updateRide(_ ride :Ride){
+        do {
+            guard let id = ride.id else {return}
+            try dbRide.collection("Rides").document(id).setData(from: ride)
+        } catch {
+            print("Unable to encode task: \(error.localizedDescription)")
+        }
+
+
+    }
 
     
     func decrementCapacity( _ ride :Ride, _ newCapacity :Int){
@@ -59,6 +69,18 @@ class RideVM: ObservableObject {
         }
         
         
+    }
+    
+    func deleteRide(_ ride :Ride) {
+        guard let id = ride.id else {return}
+        var _  = dbRide.collection("Rides").document(id).delete() { err in
+            if let err = err {
+              print("Error removing document: \(err)")
+            }
+            else {
+              print("Document successfully removed!")
+            }
+        }
     }
     
     func updatePrice(_ ride :Ride, _ newCapacity :Int){

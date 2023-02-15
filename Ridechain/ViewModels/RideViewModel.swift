@@ -62,6 +62,18 @@ class RideViewModel: ObservableObject {
         
     }
     
+    func deleteRide(_ ride :Ride) {
+        guard let id = ride.id else {return}
+        var _  = dbRide.collection("Rides").document(id).delete() { err in
+            if let err = err {
+              print("Error removing document: \(err)")
+            }
+            else {
+              print("Document successfully removed!")
+            }
+        }
+    }
+    
     func updatePrice(_ ride :Ride, _ newCapacity :Int){
         
     }

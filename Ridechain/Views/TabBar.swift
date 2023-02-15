@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct TabBar: View {
-    
-    init() {
-//         authViewModel()
-//         PassengerVM()
-//         RideVM()
-//         TicketVM()
-        UITabBar.appearance().backgroundColor = UIColor(named: "tabbar")
-    }
+    var user : Passenger
+
     var body: some View {
         TabView {
             Today()
                 .tabItem {
-                    Label("Today", systemImage: "list.dash")
+                    Label("Rides", systemImage: "list.dash")
                 }
             
          SearchView()
@@ -29,7 +23,7 @@ struct TabBar: View {
                 }
             mytickets()
              .tabItem {
-                    Label("Tickets", systemImage: "ticket.fill")
+                    Label("Tickets", systemImage: "wallet.pass")
                }
             walletPage()
                 .tabItem {
@@ -39,8 +33,8 @@ struct TabBar: View {
     }
 }
 
-struct TabBar_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBar()
-    }
-}
+//struct TabBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TabBar()
+//    }
+//}
