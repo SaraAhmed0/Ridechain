@@ -44,6 +44,8 @@ struct splashscreen: View {
             user = i
             print("id: "+id)
             userType = user.userType ?? ""
+          }else{
+              print("user not found")
           }
         }
         print("usertype is: "+userType)

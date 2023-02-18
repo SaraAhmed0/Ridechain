@@ -74,7 +74,7 @@ class TicketVM: ObservableObject {
     }
     
     func issueTicket(_ ride : Ride, _ total : Int, _ price : Double, _ id : Int){
-        var dbRide = RideVM()
+        let dbRide = RideVM()
         let ticket = Ticket(relatedRide: ride.id, totaltickets: total, invoiceNo: id,
                             time: ride.rideStartTime, date: ride.rideDate,
                             duration: ride.rideDuration, price: price,

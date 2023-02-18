@@ -106,6 +106,7 @@ struct SearchViewSP: View {
                                     sprideinitv(ride : dbRide.rides[index])
                                 }
                             }
+                            Spacer()
                         } label: {
                             VStack(spacing: 10){
                                 Text("Bus")
@@ -129,6 +130,7 @@ struct SearchViewSP: View {
                                     sprideinitv(ride : dbRide.rides[index])
                                 }
                             }
+                            Spacer()
                         } label: {
                             VStack(spacing: 10){
                                 Text("Metro")
@@ -158,6 +160,7 @@ struct SearchViewSP: View {
                         sprideinitv(ride : dbRide.rides[index])
                     }
                 }
+                Spacer()
 
             }
         }

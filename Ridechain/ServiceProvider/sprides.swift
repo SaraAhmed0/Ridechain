@@ -33,7 +33,9 @@ struct sprides: View {
                 Rectangle().foregroundColor(colorp.slblue).ignoresSafeArea()
                 VStack{
                     HStack{
-                        Text("Welcome SAPTCO").font(.custom("Roboto-Medium",size:30))
+                        let name = "Welcome " + dbPassenger.getUserName(dbPassenger.passengers)
+                        Text(name).font(.custom("Roboto-Medium",size:30))
+                        Spacer()
 //                            .padding()
                         NavigationLink(destination: spProfile(passenger: Passenger(passengerNationalID: "",passengerEmail: dbPassenger.getEmail(dbPassenger.passengers), passengerName: dbPassenger.getUserName(dbPassenger.passengers)))){
                             Image(systemName: "person.circle").font(.largeTitle)
@@ -291,25 +293,37 @@ struct spProfile : View{
     var passenger : Passenger
     @EnvironmentObject var ViewModel: authViewModel
     var body: some View{
-        VStack{
-            List{
-                Text(passenger.passengerName ?? "")
-                Text(passenger.passengerEmail ?? "")
+        ZStack{
+            Rectangle().foregroundColor(colorp.slblue).ignoresSafeArea()
+            VStack{
+                List{
+                    Text(passenger.passengerName ?? "")
+                    Text(passenger.passengerEmail ?? "")
+                    NavigationLink(destination: spTicket() ){
+                        Text("Booked Tickets")
+                    }
+                }
+                Button(action: {
+                    ViewModel.signOut()
+                }, label: {
+                    Text("sign Out")
+                        .foregroundColor(Color.white)
+                        .frame(width: 350,height: 50)
+                        .background(Color(.red))
+                        .cornerRadius(8)
+                        .offset(y:-20)
+                    
+                    
+                    
+                })
+                
             }
-            Button(action: {
-                ViewModel.signOut()
-            }, label: {
-                Text("sign Out")
-                    .foregroundColor(Color.white)
-                    .frame(width: 350,height: 50)
-                    .background(Color(.red))
-                    .cornerRadius(8)
-                    .offset(y:-20)
-                
-                
-                
-            })
-            
         }
+    }
+}
+
+struct spTicket : View {
+    var body: some View {
+        EmptyView()
     }
 }

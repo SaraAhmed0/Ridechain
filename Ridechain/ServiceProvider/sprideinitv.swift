@@ -14,7 +14,7 @@ struct sprideinitv: View {
     var body: some View {
         Button(action:{  self.showSheetView.toggle()}){
             ZStack{
-                RoundedRectangle(cornerRadius: 0).fill(.white).frame(width: 340.0, height: 91.0)
+                RoundedRectangle(cornerRadius: 6).fill(.white).frame(width: 370.0, height: 91.0).border(Color("lblue"))
                 
                 
                 VStack{

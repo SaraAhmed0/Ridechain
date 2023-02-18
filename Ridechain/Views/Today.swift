@@ -62,6 +62,16 @@ struct Today: View {
             if showTicketPopupView{
                 TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView)
             }
+        }.onAppear(){
+            NotificationCenter.default.addObserver(forName: Notification.didBookTicket, object: nil, queue: .main) { (_) in
+                
+                showTicketPopupView.toggle()
+            }
+            NotificationCenter.default.addObserver(forName: Notification.viewTicket, object: nil, queue: .main) { (_) in
+                
+                showBookTicketSheet.toggle()
+            }
+            
         }
        
     }

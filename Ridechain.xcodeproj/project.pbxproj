@@ -61,6 +61,8 @@
 		DC8C5E5A299C2DD300F12B03 /* splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E59299C2DD300F12B03 /* splashscreen.swift */; };
 		DC8C5E5C299C2E3A00F12B03 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E5B299C2E3A00F12B03 /* UserType.swift */; };
 		DC8C5E5E299CD9F100F12B03 /* SearchViewSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E5D299CD9F100F12B03 /* SearchViewSP.swift */; };
+		DC8C5E60299D793100F12B03 /* SignUpFormVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E5F299D793100F12B03 /* SignUpFormVM.swift */; };
+		DC8C5E62299D92F300F12B03 /* SignInFormVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8C5E61299D92F300F12B03 /* SignInFormVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,8 @@
 		DC8C5E59299C2DD300F12B03 /* splashscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashscreen.swift; sourceTree = "<group>"; };
 		DC8C5E5B299C2E3A00F12B03 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		DC8C5E5D299CD9F100F12B03 /* SearchViewSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewSP.swift; sourceTree = "<group>"; };
+		DC8C5E5F299D793100F12B03 /* SignUpFormVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormVM.swift; sourceTree = "<group>"; };
+		DC8C5E61299D92F300F12B03 /* SignInFormVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFormVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				DC8C5E54299AAA1300F12B03 /* SignViewsSP.swift */,
+				DC8C5E5F299D793100F12B03 /* SignUpFormVM.swift */,
+				DC8C5E61299D92F300F12B03 /* SignInFormVM.swift */,
 			);
 			path = signViews;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8C5E62299D92F300F12B03 /* SignInFormVM.swift in Sources */,
 				BF1287342985B22D00913162 /* SearchListCellView.swift in Sources */,
 				DC84F246295C689800379060 /* TicketVM.swift in Sources */,
 				DC8C5E50299AA7EF00F12B03 /* sprides.swift in Sources */,
@@ -377,6 +384,7 @@
 				DC8C5E52299AA80D00F12B03 /* addRide.swift in Sources */,
 				DC539E162951221D004A9760 /* Passenger.swift in Sources */,
 				BF1287352985B22D00913162 /* BookTicketSheetView.swift in Sources */,
+				DC8C5E60299D793100F12B03 /* SignUpFormVM.swift in Sources */,
 				DC8C5E4E299AA7C700F12B03 /* tabbarSP.swift in Sources */,
 				DC84F242295C685700379060 /* PassengerVM.swift in Sources */,
 				BF12873D2985B2EB00913162 /* RideViewModel.swift in Sources */,

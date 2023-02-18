@@ -26,6 +26,7 @@ struct RidechainApp: App {
         dbTicket = TicketVM()
         randomId = RandomIdGenerator()
         UITabBar.appearance().backgroundColor = UIColor(.white)
+//        UITableView.appearance().backgroundColor = UIColor(named: "seaGreen")
     }
     var body: some Scene {
         WindowGroup {

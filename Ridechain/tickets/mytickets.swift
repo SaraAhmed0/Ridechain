@@ -188,13 +188,11 @@ struct mytickets: View {
                 Text("valid").foregroundColor(.white)
             }
             Spacer()
+            
             Text(eticket.ticketOwner ?? "").font(.custom("Roboto-Medium",size:32)).fontWeight(.bold)
             
             Text("Show this ticket at the entrance").font(.custom("Roboto-Medium",size:16)).fontWeight(.regular).foregroundColor(.gray)
             Divider()
-            
-            
-            
             
             VStack{
                 
@@ -202,8 +200,6 @@ struct mytickets: View {
                     
                     
                     Text("From").font(.custom("Roboto-Medium",size:16)).padding(.leading, 30).foregroundColor(colorp.lblue)
-                    
-                    
                     
                     ZStack{
                         Circle()
@@ -225,9 +221,6 @@ struct mytickets: View {
                     
                     
                     Text("To").font(.custom("Roboto-Medium",size:16)).padding(.trailing, 50).foregroundColor(colorp.lblue)
-                    
-                    
-                    
                     
                 }
                 
@@ -307,23 +300,23 @@ struct mytickets: View {
         {
             return false
         }
-    
+        
     }}
 
 
 
-    
+
 
 
 struct choosetickets_Previews: PreviewProvider {
     static var previews: some View {
-      
-            
-            
-            mytickets()
         
         
         
-        }
+        mytickets()
+        
+        
+        
     }
+}
 

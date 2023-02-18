@@ -50,7 +50,7 @@ class authViewModel: ObservableObject{ //signin and up without auth
             //success
             DispatchQueue.main.async {
                 self?.signedIn = true
-                self?.dbPassenger.addUser(Passenger(passengerNationalID: nationalID, passengerEmail: email, passengerPassword: password, passengerName: name, walletBalance: 0.0, walletTokens: 0, userType: "P"))
+                self?.dbPassenger.addUser(Passenger(userType: "P", passengerNationalID: nationalID, passengerEmail: email, passengerPassword: password, passengerName: name, walletBalance: 0.0, walletTokens: 0))
 
             }
 
@@ -65,7 +65,7 @@ class authViewModel: ObservableObject{ //signin and up without auth
             //success
             DispatchQueue.main.async {
                 self?.signedIn = true
-                self?.dbPassenger.addUser(Passenger(passengerEmail: email, passengerPassword: password, passengerName: name, spLocation: city, userType: "S"))
+                self?.dbPassenger.addUser(Passenger(userType: "S", passengerEmail: email, passengerPassword: password, passengerName: name, spLocation: city))
 
             }
 

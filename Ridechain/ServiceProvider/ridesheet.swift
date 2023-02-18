@@ -149,8 +149,3 @@ struct ridesheet: View {
     }
 }
 
-//struct ridesheet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ridesheet()
-//    }
-//}

@@ -23,7 +23,7 @@ class Passenger: Codable, Identifiable{
     var userType: String?
 
     
-    init(passengerNationalID:String? = "", passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", walletBalance: Double? = 0.0, walletTokens: Int? = 0 , userType: String? = "P" ) {
+    init( userType: String? = "P", passengerNationalID:String? = "", passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", walletBalance: Double? = 0.0, walletTokens: Int? = 0 ) {
         self.passengerNationalID = passengerNationalID
         self.passengerEmail = passengerEmail
         self.passengerPassword = passengerPassword
@@ -33,7 +33,7 @@ class Passenger: Codable, Identifiable{
         self.userType = userType
     }
     
-    init(passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", spLocation: String? = "" , userType: String? = "S") {
+    init(userType: String? = "S", passengerEmail: String? = "", passengerPassword: String? = "",  passengerName: String? = "", spLocation: String? = "" ) {
 
         self.passengerEmail = passengerEmail
         self.passengerPassword = passengerPassword

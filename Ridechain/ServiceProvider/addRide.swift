@@ -19,135 +19,132 @@ struct addRide: View {
     @EnvironmentObject var dbRide: RideVM
     @State private var showSaveAlert = false
     @State var goTo = false
+    @State private var showingAlert = false
+    @State var alertTitle: String = ""
+    @State var alertMessage: String = ""
     var body: some View {
-        VStack{
-            VStack(alignment:.leading){
-                Text("Add Ride").font(.custom("Roboto-Medium",size:44))
-                Divider()
-                Text("Destenation and Time").foregroundColor(.gray)
-                    .font(.subheadline)
-                HStack{
-                    Image(systemName: "arrow.right").foregroundColor(colorp.dblue)
-                    TextField("From", text: $pickup).frame(width: 330.0, height: 40.0)
-                }.background(.white)
-                HStack{
-                    Image(systemName: "arrow.backward").foregroundColor(colorp.dblue)
-                    TextField("To  ", text: $dropoff).frame(width: 330.0, height: 40.0)
-                }.background(.white)
-                Spacer()
-                    .frame(height: 30.0)
-                Text("Date and Duration").foregroundColor(.gray)
-                    .font(.subheadline)
-                HStack{
-                    Image(systemName: "calendar").foregroundColor(colorp.dblue)
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 333, height: 40)
-                        DatePicker("label", selection: $date, displayedComponents: [.date])
-                            .padding(.trailing, 200.0)
-                            .datePickerStyle(CompactDatePickerStyle())
-                            .labelsHidden()
-                    
-                       
-                    }
-                   
-                    }.background(.white)
-                HStack{
-                    Image(systemName: "clock").foregroundColor(colorp.dblue)
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 333, height: 40)
-                        DatePicker("label", selection: $time, displayedComponents: [.hourAndMinute])
-                            .padding(.trailing, 200.0)
-                            .datePickerStyle(CompactDatePickerStyle())
-                            .labelsHidden()
-                    
-                       
-                    }
-                   
-                    }.background(.white)
-                
-                HStack{
-                    Image(systemName: "clock.arrow.circlepath").foregroundColor(colorp.dblue)
-                    TextField("Duration", text: $duration).frame(width: 330.0, height: 40.0)
-                }.background(.white)
-                
-               
-            }
+        ZStack{
+            Rectangle().foregroundColor(colorp.slblue).ignoresSafeArea()
             
-            
-            
-            VStack(alignment:.leading){
-                
-                Spacer()
-                    .frame(height: 30.0)
-                Text("Type and Availability").foregroundColor(.gray)
-                    .font(.subheadline)
-                HStack{
-                    Image(systemName: "tram").foregroundColor(colorp.dblue)
-                    TextField("Type", text: $type).frame(width: 330.0, height: 40.0)
-                }.background(.white)
-                HStack{
-                    Image(systemName: "person.3").foregroundColor(colorp.dblue)
-                    TextField("Availability", text: $capacity).frame(width: 314.0, height: 40.0)
-                }.background(.white)
-                
-               
-                Spacer()
-                    .frame(height: 30.0)
-                Text("Price").foregroundColor(.gray)
-                    .font(.subheadline)
-                HStack{
-                    Image(systemName: "creditcard").foregroundColor(colorp.dblue)
-                    TextField("Price", text: $price).frame(width: 330.0, height: 40.0)
-                }.background(.white)
-               
-                
-            }
-            Spacer()
-                .frame(height: 50.0)
             VStack{
-                Button(action:{
-                    if pickup != ""{
-                        dbRide.addRide(Ride(rideStartTime: time, rideDate: date, rideType: type, ridePrice: Double(price), rideCapacity: Int(capacity), ridePickup: pickup, rideDropoff: dropoff, rideDuration: Int(duration)))
-                        goTo = true
+                VStack(alignment:.leading){
+                    Text("Add Ride").font(.custom("Roboto-Medium",size:44))
+                    Divider()
+                    Text("Destenation and Time").foregroundColor(.gray)
+                        .font(.subheadline)
+                    HStack{
+                        Image(systemName: "arrow.right").foregroundColor(colorp.dblue)
+                        TextField("From", text: $pickup).frame(width: 330.0, height: 40.0)
+                    }.background(.white)
+                    HStack{
+                        Image(systemName: "arrow.backward").foregroundColor(colorp.dblue)
+                        TextField("To  ", text: $dropoff).frame(width: 330.0, height: 40.0)
+                    }.background(.white)
+                    Spacer()
+                        .frame(height: 30.0)
+                    Text("Date and Duration").foregroundColor(.gray)
+                        .font(.subheadline)
+                    HStack{
+                        Image(systemName: "calendar").foregroundColor(colorp.dblue)
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 333, height: 40)
+                            DatePicker("label", selection: $date, displayedComponents: [.date])
+                                .padding(.trailing, 200.0)
+                                .datePickerStyle(CompactDatePickerStyle())
+                                .labelsHidden()
+                            
+                            
+                        }
                         
-                    }
-                }){
-                    ZStack{
-                        Rectangle()
-                            .fill(colorp.lgreen)
-                            .frame(width: 362, height: 40)
-                        Text("Save").foregroundColor(.white)
-                       
-                    }
-                }.alert( isPresented: $showSaveAlert) {
-                    
-                    Alert(
-                        title: Text("Ride Added Succecfully"),
-                        message: Text(""),
-                        primaryButton: .destructive(Text("Delete"), action: {
-                    
-                        }),
-                        secondaryButton: .cancel(Text(""), action: { // 1
+                    }.background(.white)
+                    HStack{
+                        Image(systemName: "clock").foregroundColor(colorp.dblue)
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 333, height: 40)
+                            DatePicker("label", selection: $time, displayedComponents: [.hourAndMinute])
+                                .padding(.trailing, 200.0)
+                                .datePickerStyle(CompactDatePickerStyle())
+                                .labelsHidden()
                             
                             
-                        })
-                    )
+                        }
+                        
+                    }.background(.white)
+                    
+                    HStack{
+                        Image(systemName: "clock.arrow.circlepath").foregroundColor(colorp.dblue)
+                        TextField("Duration", text: $duration).frame(width: 330.0, height: 40.0)
+                    }.background(.white)
+                    
+                    
+                }.padding()
+                
+                
+                
+                VStack(alignment:.leading){
+                    
+                    Spacer()
+                        .frame(height: 30.0)
+                    Text("Type and Availability").foregroundColor(.gray)
+                        .font(.subheadline)
+                    HStack{
+                        Image(systemName: "tram").foregroundColor(colorp.dblue)
+                        TextField("Type", text: $type).frame(width: 330.0, height: 40.0)
+                    }.background(.white)
+                    HStack{
+                        Image(systemName: "person.3").foregroundColor(colorp.dblue)
+                        TextField("Availability", text: $capacity).frame(width: 314.0, height: 40.0)
+                    }.background(.white)
+                    
+                    
+                    Spacer()
+                        .frame(height: 30.0)
+                    Text("Price").foregroundColor(.gray)
+                        .font(.subheadline)
+                    HStack{
+                        Image(systemName: "creditcard").foregroundColor(colorp.dblue)
+                        TextField("Price", text: $price).frame(width: 330.0, height: 40.0)
+                    }.background(.white)
+                    
                     
                 }
-            }
-            
-            
-//            NavigationLink(destination: UserType(), isActive: $showSheet) {
-//                           EmptyView()
-//                         }
-            
-        }.padding().background(colorp.slblue).ignoresSafeArea()
- 
+                Spacer()
+                    .frame(height: 50.0)
+                VStack{
+                    Button(action:{
+                        if (pickup != "" && dropoff != "" ) {
+                            dbRide.addRide(Ride(rideStartTime: time, rideDate: date, rideType: type, ridePrice: Double(price), rideCapacity: Int(capacity), ridePickup: pickup, rideDropoff: dropoff, rideDuration: Int(duration)))
+                            goTo = true
+                            showingAlert = true
+                            alertTitle = "Ride Added Successfully!"
+                            alertMessage = ""
+                            
+                        }else{
+                            showingAlert = true
+                            alertTitle = "Ride Add Faild"
+                            alertMessage = "Please entre all information"
+                        }
+                    }){
+                        ZStack{
+                            Rectangle()
+                                .fill(colorp.lgreen)
+                                .frame(width: 362, height: 40)
+                            Text("Save").foregroundColor(.white)
+                            
+                        }
+                    }.alert(isPresented: $showingAlert) {
+                        Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
 
+                    }
+                }
+                
+            }.padding().background(colorp.slblue).ignoresSafeArea()
+            
+        }
     }
 }
 

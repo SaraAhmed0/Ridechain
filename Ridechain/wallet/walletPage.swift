@@ -139,27 +139,29 @@ struct accountInfo : View{
     var passenger : Passenger
     @EnvironmentObject var ViewModel: authViewModel
     var body: some View {
-        VStack{
-            List{
-                Text(passenger.passengerName ?? "")
-                Text(passenger.passengerEmail ?? "")
+        ZStack{
+            Rectangle().foregroundColor(colorp.slblue).ignoresSafeArea()
+            VStack{
+                List{
+                    Text(passenger.passengerName ?? "")
+                    Text(passenger.passengerEmail ?? "")
+                }
+                Button(action: {
+                    ViewModel.signOut()
+                }, label: {
+                    Text("sign Out")
+                        .foregroundColor(Color.white)
+                        .frame(width: 350,height: 50)
+                        .background(Color(.red))
+                        .cornerRadius(8)
+                        .offset(y:-20)
+                    
+                    
+                    
+                })
+                
             }
-            Button(action: {
-                ViewModel.signOut()
-            }, label: {
-                Text("sign Out")
-                    .foregroundColor(Color.white)
-                    .frame(width: 350,height: 50)
-                    .background(Color(.red))
-                    .cornerRadius(8)
-                    .offset(y:-20)
-                
-                
-                
-            })
-            
         }
-        
     }
 }
 
