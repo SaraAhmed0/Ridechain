@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TabBar: View {
-    var user : Passenger
-
+//    var user : Passenger
+//
     var body: some View {
         TabView {
             Today()

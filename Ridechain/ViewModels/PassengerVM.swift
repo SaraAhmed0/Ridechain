@@ -22,15 +22,12 @@ class PassengerVM: ObservableObject {
     }
     
     func loadData(){
-        if (Auth.auth().currentUser?.uid != nil){
             dbPassenger.collection("Passengers").addSnapshotListener { (querySnapshot, error) in
                 if let querySnapshot = querySnapshot {
                     self.passengers = querySnapshot.documents.compactMap { document in
                         do{
                             let x =  try document.data(as: Passenger.self)
-                            if (x.id == Auth.auth().currentUser?.uid){
                                 return x
-                            }
                         }
                         catch {
                             print(error)
@@ -38,8 +35,6 @@ class PassengerVM: ObservableObject {
                         return nil
                     }
                 }
-                
-            }
         }
     }
     

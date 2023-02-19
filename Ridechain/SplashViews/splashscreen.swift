@@ -10,9 +10,12 @@ import FirebaseAuth
 import Firebase
 
 struct splashscreen: View {
-    let viewModel = authViewModel()
-//    var user : Passenger
+    
     @EnvironmentObject var dbPassenger: PassengerVM
+    @EnvironmentObject var viewModel : authViewModel
+   
+//    var user : Passenger
+  
     @State  var isActiveSignin : Bool = false
     @State  var isActiveSignup : Bool = false
    
@@ -20,10 +23,12 @@ struct splashscreen: View {
         if isActiveSignin && viewModel.isSignedIn {
             let id = Auth.auth().currentUser?.uid
             let user = user(id : id ?? "", users: dbPassenger.passengers)
-            if user.userType == "P"{
-                TabBar(user: user)
-            }else if user.userType == "S"{
-                tabbarSP(user: user)
+            if user == "P"{
+                TabBar()
+            }else if user == "S"{
+                tabbarSP()
+            } else if user == ""{
+                logoSplash(isActiveSignin: $isActiveSignin)
             }
             
         }else if viewModel.isSignedIn{
@@ -36,20 +41,20 @@ struct splashscreen: View {
         }
         
     }
-    func user(id: String, users: [Passenger]) -> Passenger{
-      var user : Passenger = Passenger()
+    func user(id: String, users: [Passenger]) -> String{
+//      var user : Passenger = Passenger()
         var userType = ""
         for i in users{
           if i.id == id {
-            user = i
+//            user = i
             print("id: "+id)
-            userType = user.userType ?? ""
+            userType = i.userType ?? ""
           }else{
               print("user not found")
           }
         }
         print("usertype is: "+userType)
-        return user
+        return userType
       }
 }
 

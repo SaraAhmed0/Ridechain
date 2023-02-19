@@ -220,9 +220,9 @@ class SignUpFormVM: ObservableObject{
                 NationalIDStatus in
                 switch NationalIDStatus{
                 case .empty:
-                    return "Email cannot be empty"
+                    return "National ID cannot be empty"
                 case .wrongFormat:
-                    return "Invalid email format"
+                    return "Invalid national ID format"
                 case .valid:
                     return ""
                 }
@@ -237,9 +237,9 @@ class SignUpFormVM: ObservableObject{
                 FullNameStatus in
                 switch FullNameStatus{
                 case .empty:
-                    return "Full Name cannot be empty"
+                    return "Name cannot be empty"
                 case .tooShort:
-                    return "Full Name is too short"
+                    return "Name is too short"
                 case .valid:
                     return ""
                 }

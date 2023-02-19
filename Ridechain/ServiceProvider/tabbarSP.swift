@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct tabbarSP: View {
-    var user : Passenger
+//    var user : Passenger
     var body: some View {
         TabView {
             sprides()
