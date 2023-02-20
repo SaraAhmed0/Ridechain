@@ -19,7 +19,7 @@ struct SearchListView: View {
     @EnvironmentObject var passengerVM: PassengerVM
     var pickup: String? = nil
     var dropOff: String? = nil
-    var isBusSelected: Bool? = nil
+//    var isBusSelected: Bool? = nil
     @Binding var fromTF: String
     @Binding var toTF: String
     
@@ -72,7 +72,7 @@ struct SearchListView: View {
                     }
                 }
                 ScrollView{
-                    if newRide(rides) > 0 {
+//                    if newRide(rides) > 0 {
                         ForEach(rides){ ride in
                             if  (fromTF.range(of: ride.ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: ride.rideDropoff ?? "", options: .caseInsensitive) != nil) {
                                 SearchListCellView(ride: ride)
@@ -81,9 +81,9 @@ struct SearchListView: View {
                             }
                         }
                        
-                    }else {
-                        notFound()
-                    }
+//                    }else {
+//                        notFound()
+//                    }
                 }
             }
             .navigationTitle("Search")
@@ -100,11 +100,11 @@ struct SearchListView: View {
             }
         }
         .onAppear(){
-            if let isBusSelected {
-                self.rides = viewModel.rides.filter({(isBusSelected ? $0.rideType == "Bus" : $0.rideType == "Metro")})
-            }else{
-                self.rides = viewModel.rides.filter({($0.ridePickup?.localizedCaseInsensitiveContains(pickup ?? "") ?? false) && ($0.rideDropoff?.localizedCaseInsensitiveContains(dropOff ?? "") ?? false)})
-            }
+//            if let isBusSelected {
+//                self.rides = viewModel.rides.filter({(isBusSelected ? $0.rideType == "Bus" : $0.rideType == "Metro")})
+//            }else{
+//                self.rides = viewModel.rides.filter({($0.ridePickup?.localizedCaseInsensitiveContains(pickup ?? "") ?? false) && ($0.rideDropoff?.localizedCaseInsensitiveContains(dropOff ?? "") ?? false)})
+//            }
             
             NotificationCenter.default.addObserver(forName: Notification.didBookTicket, object: nil, queue: .main) { (_) in
                 

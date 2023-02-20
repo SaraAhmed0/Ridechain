@@ -102,9 +102,12 @@ struct SearchP: View {
                         //Bus
                         
                         NavigationLink {
+                            bar(fromTF: $fromTF, toTF: $toTF)
                             ForEach(dbRide.rides.indices, id: \.self){ index in
                                 if  dbRide.rides[index].rideType == "Bus"{
-                                    SearchListCellView(ride : dbRide.rides[index])
+                                    if checktime(dbRide.rides[index]) {
+                                        TodayCell(ride : dbRide.rides[index])
+                                    }
                                 }
                             }
                             Spacer()
@@ -126,9 +129,12 @@ struct SearchP: View {
                         .controlSize(.large)
                         
                         NavigationLink {
+                            bar(fromTF: $fromTF, toTF: $toTF)
                             ForEach(dbRide.rides.indices, id: \.self){ index in
                                 if  dbRide.rides[index].rideType == "Metro"{
-                                    SearchListCellView(ride : dbRide.rides[index])
+                                    if checktime(dbRide.rides[index]) {
+                                        TodayCell(ride : dbRide.rides[index])
+                                    }
                                 }
                             }
                             Spacer()
@@ -155,19 +161,100 @@ struct SearchP: View {
                     .padding(.bottom, 30)
             }
             .navigationDestination(isPresented: $isShowingSearchView) {
-                ForEach(dbRide.rides.indices, id: \.self){ index in
-                    if  (fromTF.range(of: dbRide.rides[index].ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: dbRide.rides[index].rideDropoff ?? "", options: .caseInsensitive) != nil){
-
-                        SearchListCellView(ride : dbRide.rides[index])
+                bar(fromTF: $fromTF, toTF: $toTF)
+                if newRide(dbRide.rides) > 0 {
+                    ForEach(dbRide.rides.indices, id: \.self){ index in
+                        if  (fromTF.range(of: dbRide.rides[index].ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: dbRide.rides[index].rideDropoff ?? "", options: .caseInsensitive) != nil){
+                            
+                            SearchListCellView(ride : dbRide.rides[index])
+                        }
                     }
+                    Spacer()
+                    
+                }else{
+                    notFound()
+                    Spacer()
                 }
-                Spacer()
+            }
+        }
+    }
+    func newRide(_ rides : [Ride]) -> Int{
+        var counter = 0
+        for ride in rides{
+            if  (fromTF.range(of: ride.ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: ride.rideDropoff ?? "", options: .caseInsensitive) != nil) {
+                counter = counter + 1
+            }
+        }
+        return counter
+    }
+    
+    func checktime(_ ride :Ride)-> Bool
+    {
+        let date2 = ride.rideDate ?? Date()
+        let istoday = Calendar.current.isDateInToday(date2)
+        
+        if   istoday {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    
+    }
+}
 
+
+struct bar : View{
+    @Binding var fromTF: String
+    @Binding var toTF: String
+    var body: some View{
+        
+        ZStack{
+            Rectangle()
+                .fill(Color.darkGreen)
+                .frame(height: 84)
+            
+            
+            HStack{
+                Image(systemName: "location")
+                    .foregroundColor(.parrotColor)
+                Image("verticalDottedLine")
+                
+                VStack{
+                    
+                    HStack{
+                        
+                        VStack(spacing: 12){
+                            Text("From")
+                                .scaledFont(name: .medium, size: 16)
+                                .foregroundColor(.white)
+                            Text(fromTF ?? "")
+                                .scaledFont(name: .medium, size: 16)
+                                .foregroundColor(.white)
+                        }
+                        
+                        HStack(spacing: -8){
+                            Image("dottedLine")
+                            Image("dottedLineRight")
+                        }.offset(y: -8)
+                        
+                        VStack(spacing: 12){
+                            Text("To")
+                                .scaledFont(name: .medium, size: 16)
+                                .foregroundColor(.white)
+                            Text(toTF ?? "")
+                                .scaledFont(name: .medium, size: 16)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    
+                }
+                
             }
         }
     }
 }
-
 struct SearchP_Previews: PreviewProvider {
     static var previews: some View {
         SearchP()

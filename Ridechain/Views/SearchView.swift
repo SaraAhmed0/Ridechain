@@ -160,7 +160,7 @@ struct SearchView: View {
                     .padding(.bottom, 30)
             }
             .navigationDestination(isPresented: $isShowingSearchView) {
-                SearchListView(isBusSelected: false, fromTF: $fromTF, toTF: $toTF)
+                SearchListView( fromTF: $fromTF, toTF: $toTF)
                     .environmentObject(viewModel)
                     .environmentObject(dbTicket)
                     .environmentObject(passengerVM)

@@ -154,6 +154,7 @@ struct SearchViewSP: View {
                     .padding(.bottom, 30)
             }
             .navigationDestination(isPresented: $isShowingSearchView) {
+                bar(fromTF: $fromTF, toTF: $toTF)
                 ForEach(dbRide.rides.indices, id: \.self){ index in
                     if  (fromTF.range(of: dbRide.rides[index].ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: dbRide.rides[index].rideDropoff ?? "", options: .caseInsensitive) != nil){
 

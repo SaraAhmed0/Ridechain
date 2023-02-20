@@ -17,7 +17,7 @@ struct TabBar: View {
                     Label("Rides", systemImage: "list.dash")
                 }
             
-         SearchView()
+         SearchP()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
                 }
