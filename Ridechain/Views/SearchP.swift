@@ -1,15 +1,16 @@
 //
-//  ContentView.swift
-//  TicketBooking
+//  SearchP.swift
+//  Ridechain
 //
-//  Created by Sara AlMezeini on 08/01/2023.
+//  Created by Sara AlMezeini on 29/07/1444 AH.
 //
 
 import SwiftUI
 import MapKit
-struct SearchView: View {
-    
+
+struct SearchP: View {
     @StateObject var viewModel = RideViewModel()
+    @EnvironmentObject var dbRide: RideVM
     @EnvironmentObject var dbTicket: TicketVM
     @EnvironmentObject var passengerVM: PassengerVM
     @State var isShowingTicketsView = false
@@ -82,13 +83,9 @@ struct SearchView: View {
                         Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                         
                     }.onTapGesture {
-                        if fromTF.isEmpty {
-                            alertTitle = "No Arrival Entered"
-                            alertMessage = "Please enter your Arrival"
-                            showingAlert.toggle()
-                        } else if toTF.isEmpty {
-                            alertTitle = "No Destination Entered"
-                            alertMessage = "Please enter your destination"
+                        if fromTF.isEmpty || toTF.isEmpty {
+                            alertTitle = "Missing Information"
+                            alertMessage = "Please enter your destenation"
                             showingAlert.toggle()
                         } else {
                             isShowingSearchView.toggle()
@@ -103,16 +100,14 @@ struct SearchView: View {
                     
                     HStack{
                         //Bus
+                        
                         NavigationLink {
-                            ForEach(viewModel.rides.indices, id: \.self){ index in
-                                if  viewModel.rides[index].rideType == "Bus"{
-                                    TodayCell(ride : viewModel.rides[index])
+                            ForEach(dbRide.rides.indices, id: \.self){ index in
+                                if  dbRide.rides[index].rideType == "Bus"{
+                                    SearchListCellView(ride : dbRide.rides[index])
                                 }
                             }
                             Spacer()
-//                            SearchListView(isBusSelected: true, fromTF: $fromTF, toTF: $toTF)
-//                                .environmentObject(viewModel)
-//                                .environmentObject(dbTicket)
                         } label: {
                             VStack(spacing: 10){
                                 Text("Bus")
@@ -131,9 +126,9 @@ struct SearchView: View {
                         .controlSize(.large)
                         
                         NavigationLink {
-                            ForEach(viewModel.rides.indices, id: \.self){ index in
-                                if  viewModel.rides[index].rideType == "Metro"{
-                                    TodayCell(ride : viewModel.rides[index])
+                            ForEach(dbRide.rides.indices, id: \.self){ index in
+                                if  dbRide.rides[index].rideType == "Metro"{
+                                    SearchListCellView(ride : dbRide.rides[index])
                                 }
                             }
                             Spacer()
@@ -160,18 +155,21 @@ struct SearchView: View {
                     .padding(.bottom, 30)
             }
             .navigationDestination(isPresented: $isShowingSearchView) {
-                SearchListView(isBusSelected: false, fromTF: $fromTF, toTF: $toTF)
-                    .environmentObject(viewModel)
-                    .environmentObject(dbTicket)
-                    .environmentObject(passengerVM)
+                ForEach(dbRide.rides.indices, id: \.self){ index in
+                    if  (fromTF.range(of: dbRide.rides[index].ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: dbRide.rides[index].rideDropoff ?? "", options: .caseInsensitive) != nil){
+
+                        SearchListCellView(ride : dbRide.rides[index])
+                    }
+                }
+                Spacer()
+
             }
         }
     }
-    
 }
 
-struct SearchView_Previews: PreviewProvider {
+struct SearchP_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchP()
     }
 }

@@ -42,7 +42,7 @@ struct Today: View {
                    
                     ForEach(dbRide.rides){ ride in
                         if checktime(ride){
-                            SearchListCellView(ride: ride)
+                            TodayCell(ride: ride)
                                 .environmentObject(dbTicket)
                                 .environmentObject(dbPassenger)
                         }
@@ -50,7 +50,7 @@ struct Today: View {
                     
                 }
             }
-            .navigationTitle("Search")
+//            .navigationTitle("Search")
             .sheet(isPresented: $showBookTicketSheet) {
                 BillSheetView()
                     .environmentObject(dbTicket)

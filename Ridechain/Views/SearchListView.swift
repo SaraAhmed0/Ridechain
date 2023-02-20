@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Swift
 
 struct SearchListView: View {
+    
     @State var showBookTicketSheet = false
     @State var showTicketPopupView = false
     @State var rides = [Ride]()
+    let newRides = [Ride]()
     @EnvironmentObject var dbTicket: TicketVM
     @EnvironmentObject var viewModel: RideViewModel
     @EnvironmentObject var passengerVM: PassengerVM
@@ -42,7 +45,7 @@ struct SearchListView: View {
                                     Text("From")
                                         .scaledFont(name: .medium, size: 16)
                                         .foregroundColor(.white)
-                                    Text(pickup ?? "")
+                                    Text(fromTF ?? "")
                                         .scaledFont(name: .medium, size: 16)
                                         .foregroundColor(.white)
                                 }
@@ -56,7 +59,7 @@ struct SearchListView: View {
                                     Text("To")
                                         .scaledFont(name: .medium, size: 16)
                                         .foregroundColor(.white)
-                                    Text(dropOff ?? "")
+                                    Text(toTF ?? "")
                                         .scaledFont(name: .medium, size: 16)
                                         .foregroundColor(.white)
                                 }
@@ -69,16 +72,7 @@ struct SearchListView: View {
                     }
                 }
                 ScrollView{
-                    if rides.isEmpty{
-                        VStack{
-                            Text("Search not found")
-                                .scaledFont(name: .medium, size: 26)
-                            
-                            Text("Your destenation is not found please try again")
-                                .scaledFont(name: .medium, size: 20)
-                                .multilineTextAlignment(.center)
-                        }
-                    }else{
+                    if newRide(rides) > 0 {
                         ForEach(rides){ ride in
                             if  (fromTF.range(of: ride.ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: ride.rideDropoff ?? "", options: .caseInsensitive) != nil) {
                                 SearchListCellView(ride: ride)
@@ -86,6 +80,9 @@ struct SearchListView: View {
                                     .environmentObject(passengerVM)
                             }
                         }
+                       
+                    }else {
+                        notFound()
                     }
                 }
             }
@@ -121,7 +118,31 @@ struct SearchListView: View {
         
         
     }
+    func newRide(_ rides : [Ride]) -> Int{
+        var counter = 0
+        for ride in rides{
+            if  (fromTF.range(of: ride.ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: ride.rideDropoff ?? "", options: .caseInsensitive) != nil) {
+                counter = counter + 1
+            }
+        }
+        return counter
+    }
+    
 }
+
+struct notFound : View{
+    var body: some View {
+        VStack{
+            Text("Search not found")
+                .scaledFont(name: .medium, size: 26).padding()
+            
+            Text("Your destenation is not found please try again")
+                .scaledFont(name: .medium, size: 20)
+                .multilineTextAlignment(.center)
+        }
+    }
+}
+
 
 //struct SearchListView_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -28,6 +28,8 @@
 		BF1287392985B22D00913162 /* TicketBookedPopupSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1287312985B22D00913162 /* TicketBookedPopupSuccessView.swift */; };
 		BF12873C2985B2EB00913162 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12873A2985B2EB00913162 /* TicketViewModel.swift */; };
 		BF12873D2985B2EB00913162 /* RideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF12873B2985B2EB00913162 /* RideViewModel.swift */; };
+		DC52A8E729A38FED0084FC58 /* SearchP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52A8E629A38FED0084FC58 /* SearchP.swift */; };
+		DC52A8E929A395F90084FC58 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52A8E829A395F90084FC58 /* TodayCell.swift */; };
 		DC539E0329511B78004A9760 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0229511B78004A9760 /* FirebaseAuth */; };
 		DC539E0529511B78004A9760 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0429511B78004A9760 /* FirebaseDatabase */; };
 		DC539E0729511B78004A9760 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC539E0629511B78004A9760 /* FirebaseDatabaseSwift */; };
@@ -87,6 +89,8 @@
 		BF1287312985B22D00913162 /* TicketBookedPopupSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketBookedPopupSuccessView.swift; sourceTree = "<group>"; };
 		BF12873A2985B2EB00913162 /* TicketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewModel.swift; sourceTree = "<group>"; };
 		BF12873B2985B2EB00913162 /* RideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewModel.swift; sourceTree = "<group>"; };
+		DC52A8E629A38FED0084FC58 /* SearchP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchP.swift; sourceTree = "<group>"; };
+		DC52A8E829A395F90084FC58 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		DC539E0E29511C34004A9760 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC539E1129511E84004A9760 /* authViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authViewModel.swift; sourceTree = "<group>"; };
 		DC539E152951221D004A9760 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				BF1287312985B22D00913162 /* TicketBookedPopupSuccessView.swift */,
 				DC84F2472965553200379060 /* TabBar.swift */,
 				DC6785C72989B44300E43AFB /* Today.swift */,
+				DC52A8E629A38FED0084FC58 /* SearchP.swift */,
+				DC52A8E829A395F90084FC58 /* TodayCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				DC8C5E62299D92F300F12B03 /* SignInFormVM.swift in Sources */,
 				BF1287342985B22D00913162 /* SearchListCellView.swift in Sources */,
 				DC84F246295C689800379060 /* TicketVM.swift in Sources */,
+				DC52A8E729A38FED0084FC58 /* SearchP.swift in Sources */,
 				DC8C5E50299AA7EF00F12B03 /* sprides.swift in Sources */,
 				DC84F244295C687600379060 /* RideVM.swift in Sources */,
 				DC539E1229511E84004A9760 /* authViewModel.swift in Sources */,
@@ -375,6 +382,7 @@
 				1439AA9E29645CB900ABBEC8 /* walletPage.swift in Sources */,
 				BF1287392985B22D00913162 /* TicketBookedPopupSuccessView.swift in Sources */,
 				DC6785C82989B44300E43AFB /* Today.swift in Sources */,
+				DC52A8E929A395F90084FC58 /* TodayCell.swift in Sources */,
 				47AD5F6C295224BA00EC4CDF /* colors.swift in Sources */,
 				DC8C5E45299AA55400F12B03 /* ServiceProvider.swift in Sources */,
 				1439AAA229645D1100ABBEC8 /* Wallet.swift in Sources */,
