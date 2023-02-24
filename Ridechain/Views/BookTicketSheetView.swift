@@ -225,6 +225,8 @@ struct BookTicketSheetView: View {
         return newPrice
         
     }
+    
+    
 }
 
 //struct BookTicketSheetView_Previews: PreviewProvider {

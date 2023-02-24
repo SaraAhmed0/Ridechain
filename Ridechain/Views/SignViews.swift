@@ -242,9 +242,9 @@ struct signUpView: View {
                         .foregroundColor(Color(red:0/255 ,green:168/255 ,blue:184/255 ))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } footer: {
-                    if !formVM.nationalIDinlineError.isEmpty{
-                        Text(formVM.nationalIDinlineError).foregroundColor(.red)
-                    }
+//                    if !formVM.nationalIDinlineError.isEmpty{
+//                        Text(formVM.nationalIDinlineError).foregroundColor(.red)
+//                    }
                 }
                 
                 Section {

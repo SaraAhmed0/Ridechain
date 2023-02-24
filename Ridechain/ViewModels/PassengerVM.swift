@@ -27,7 +27,9 @@ class PassengerVM: ObservableObject {
                     self.passengers = querySnapshot.documents.compactMap { document in
                         do{
                             let x =  try document.data(as: Passenger.self)
+                            if (x.id == Auth.auth().currentUser?.uid){
                                 return x
+                            }
                         }
                         catch {
                             print(error)

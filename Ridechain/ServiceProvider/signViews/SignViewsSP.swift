@@ -131,9 +131,9 @@ struct signUpViewSP: View {
                         .foregroundColor(Color(red:0/255 ,green:168/255 ,blue:184/255 ))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } footer: {
-                    if !formVM.cityinlineError.isEmpty{
-                        Text(formVM.cityinlineError).foregroundColor(.red)
-                    }
+//                    if !formVM.cityinlineError.isEmpty{
+//                        Text(formVM.cityinlineError).foregroundColor(.red)
+//                    }
                 }
                 
                 Section {

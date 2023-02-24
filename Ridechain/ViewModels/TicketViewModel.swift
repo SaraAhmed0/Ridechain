@@ -24,7 +24,7 @@ class TicketVM: ObservableObject {
     
     func loadData(){
         
-        if (Auth.auth().currentUser?.uid != nil){
+//        if (Auth.auth().currentUser?.uid != nil){
             dbTicket.collection("Tickets").addSnapshotListener { (querySnapshot, error) in
                 if let querySnapshot = querySnapshot {
                     self.tickets = querySnapshot.documents.compactMap { document in
@@ -44,7 +44,7 @@ class TicketVM: ObservableObject {
                 }
                 
             }
-        }
+//        }
         
     }
     
