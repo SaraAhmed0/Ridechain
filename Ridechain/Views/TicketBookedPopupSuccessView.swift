@@ -61,8 +61,8 @@ struct TicketBookedPopupSuccessView: View {
     }
 }
 
-struct TicketBookedPopupSuccessView_Previews: PreviewProvider {
-    static var previews: some View {
-        TicketBookedPopupSuccessView(showTicketPopupView: .constant(false))
-    }
-}
+//struct TicketBookedPopupSuccessView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TicketBookedPopupSuccessView(showTicketPopupView: .constant(false))
+//    }
+//}
