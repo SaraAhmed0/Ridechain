@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TicketBookedPopupSuccessView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
     @Binding var showTicketPopupView: Bool
     var body: some View {
 //        NavigationView {
@@ -33,8 +33,12 @@ struct TicketBookedPopupSuccessView: View {
                         
                         Button {
                             print("View Ticket")
-                            showTicketPopupView.toggle()
-                            NotificationCenter.default.post(name: Notification.viewTicket, object: nil)
+//                            showTicketPopupView.toggle()
+                            self.presentationMode.wrappedValue.dismiss()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                NotificationCenter.default.post(name: Notification.viewTicket, object: nil)
+                            }
+                            
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
@@ -54,6 +58,8 @@ struct TicketBookedPopupSuccessView: View {
                 .padding(.horizontal, 25)
                 
                 
+                
+                
 //            }
             
 //        }
@@ -61,8 +67,8 @@ struct TicketBookedPopupSuccessView: View {
     }
 }
 
-//struct TicketBookedPopupSuccessView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TicketBookedPopupSuccessView(showTicketPopupView: .constant(false))
-//    }
-//}
+struct TicketBookedPopupSuccessView_Previews: PreviewProvider {
+    static var previews: some View {
+        TicketBookedPopupSuccessView(showTicketPopupView: .constant(false))
+    }
+}

@@ -186,9 +186,9 @@ struct BookTicketSheetView: View {
                         
                         dbTicket.issueTicket(ride, totalTickets, calculatePrice(ride, totalTickets), randomId.randomIds[0].number)
                         randomId.incrementCounter()
-                        
-                        NotificationCenter.default.post(name: Notification.didBookTicket, object: nil)
                         dismiss()
+                        NotificationCenter.default.post(name: Notification.didBookTicket, object: nil)
+                        
                     } else {
                         showingAlert.toggle()
                     }

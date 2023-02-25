@@ -165,9 +165,8 @@ struct SearchP: View {
                 if newRide(dbRide.rides) > 0 {
                     ForEach(dbRide.rides.indices, id: \.self){ index in
                         if  (fromTF.range(of: dbRide.rides[index].ridePickup ?? "", options: .caseInsensitive) != nil) && (toTF.range(of: dbRide.rides[index].rideDropoff ?? "", options: .caseInsensitive) != nil){
-                            if checktime(dbRide.rides[index]){
-                                SearchListCellView(ride : dbRide.rides[index])
-                            }
+                            
+                            SearchListCellView(ride : dbRide.rides[index])
                         }
                     }
                     Spacer()

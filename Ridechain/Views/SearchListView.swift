@@ -95,10 +95,14 @@ struct SearchListView: View {
                     .presentationDragIndicator(.visible)
                 
             }
-            if showTicketPopupView{
-                TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView)
-            }
+            .fullScreenCover(isPresented: $showTicketPopupView, content: {
+                TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView).background(ClearBackgroundView())
+            })
+//            if showTicketPopupView{
+//                TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView)
+//            }
         }
+       
         .onAppear(){
 //            if let isBusSelected {
 //                self.rides = viewModel.rides.filter({(isBusSelected ? $0.rideType == "Bus" : $0.rideType == "Metro")})
@@ -149,3 +153,21 @@ struct notFound : View{
 //        SearchListView()
 //    }
 //}
+
+struct ClearBackgroundView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        return InnerView()
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {
+    }
+    
+    private class InnerView: UIView {
+        override func didMoveToWindow() {
+            super.didMoveToWindow()
+            
+            superview?.superview?.backgroundColor = .clear
+        }
+        
+    }
+}

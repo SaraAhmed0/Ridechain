@@ -59,9 +59,16 @@ struct Today: View {
                     .presentationDragIndicator(.visible)
                 
             }
-            if showTicketPopupView{
-                TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView)
-            }
+
+            .fullScreenCover(isPresented: $showTicketPopupView, content: {
+                TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView).background(ClearBackgroundView())
+            })
+//            if showTicketPopupView{
+//
+//                    TicketBookedPopupSuccessView(showTicketPopupView: $showTicketPopupView)
+//
+//
+//            }
         }.onAppear(){
             NotificationCenter.default.addObserver(forName: Notification.didBookTicket, object: nil, queue: .main) { (_) in
                 
